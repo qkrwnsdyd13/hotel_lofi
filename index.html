@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Main – Low-fidelity Wireframe</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#intro" class="skip" data-fp-link>본문 바로가기</a>
+
+<!-- ============================================================
+     HEADER
+     - data-mode="hero"    : 메인 영상 위 (햄버거 · 상품찾기 · KR, 투명)
+     - data-mode="default" : 그 외 섹션 (상단 유틸바 + GNB, 흰 배경)
+============================================================ -->
+<header class="header" id="header" data-mode="hero">
+
+  <!-- 히어로용 미니 헤더 -->
+  <div class="hd-hero">
+    <button type="button" class="btn-ham" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#" class="hd-link">상품찾기 <i class="ico-search" aria-hidden="true"></i></a>
+    <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+  </div>
+
+  <!-- 기본 헤더 -->
+  <div class="hd-full">
+    <div class="util-bar">
+      <div class="util-left">
+        <a href="#" class="group-link">HOTEL GROUP</a>
+        <a href="#" class="hd-link">호텔찾기 <i class="ico-search" aria-hidden="true"></i></a>
+        <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+      </div>
+      <ul class="util-right">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">예약확인</a></li>
+        <li><a href="#">멤버십</a></li>
+      </ul>
+    </div>
+    <div class="gnb-bar">
+      <h1 class="logo"><a href="#hero" data-fp-link><span class="ph-box">LOGO</span></a></h1>
+      <nav class="gnb" aria-label="주메뉴">
+        <div class="reserv">
+          <button type="button" class="reserv-btn" aria-expanded="false">RESERVATION <i class="ico-grid" aria-hidden="true"></i></button>
+          <ul class="reserv-list">
+            <li><a href="#">ROOM</a></li>
+            <li><a href="#">DINING</a></li>
+            <li><a href="#">MEMBERSHIP</a></li>
+          </ul>
+        </div>
+        <span class="gnb-sep" aria-hidden="true"></span>
+        <ul class="gnb-list">
+          <li><a href="#intro" data-fp-link>ABOUT</a></li>
+          <li><a href="#rooms" data-fp-link>PROGRAMS</a></li>
+          <li><a href="#dining" data-fp-link>PARTNERS</a></li>
+          <li><a href="#meeting" data-fp-link>JOURNAL</a></li>
+          <li><a href="#apply" data-fp-link>APPLY</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="btn-ham dark" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     전체메뉴 (슬라이드 다운 / 슬라이드 업)
+============================================================ -->
+<div class="all-menu" id="allMenu" aria-hidden="true" inert data-fp-ignore>
+  <div class="am-head">
+    <span class="ph-box emblem">EMBLEM</span>
+    <button type="button" class="am-close" aria-label="전체메뉴 닫기"><span></span><span></span></button>
+  </div>
+
+  <nav class="am-body" aria-label="전체메뉴">
+    <div class="am-col">
+      <button type="button" class="am-tit">ABOUT</button>
+      <ul class="am-list">
+        <li><a href="#intro" data-fp-link>ABOUT US</a></li>
+        <li><a href="#">OUR PROMISE</a></li>
+        <li><a href="#">LOCATION &amp; TRANSPORTATION</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">ROOMS</button>
+      <ul class="am-list">
+        <li><a href="#rooms" data-fp-link>한눈에 보기</a></li>
+        <li><a href="#">ROOM</a>
+          <ul class="am-sub"><li><a href="#">Room Type 01</a></li><li><a href="#">Room Type 02</a></li><li><a href="#">Room Type 03</a></li><li><a href="#">Room Type 04</a></li></ul>
+        </li>
+        <li><a href="#">SUITE</a>
+          <ul class="am-sub"><li><a href="#">Suite Type 01</a></li><li><a href="#">Suite Type 02</a></li><li><a href="#">Suite Type 03</a></li></ul>
+        </li>
+        <li><a href="#">SPECIALTY SUITE</a>
+          <ul class="am-sub"><li><a href="#">Specialty 01</a></li><li><a href="#">Specialty 02</a></li></ul>
+        </li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">DINING</button>
+      <ul class="am-list">
+        <li><a href="#dining" data-fp-link>한눈에 보기</a></li>
+        <li><a href="#">Restaurant 01</a></li>
+        <li><a href="#">Lounge &amp; Bar</a></li>
+        <li><a href="#">Restaurant 02</a></li>
+        <li><a href="#">Restaurant 03</a></li>
+        <li><a href="#">Deli</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">OFFERS</button>
+      <ul class="am-list">
+        <li><a href="#">PACKAGE</a></li>
+        <li><a href="#">EVENT</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">MEETING &amp; WEDDING</button>
+      <ul class="am-list">
+        <li><a href="#meeting" data-fp-link>한눈에 보기</a></li>
+        <li><a href="#">MEETING</a>
+          <ul class="am-sub"><li><a href="#">Signature Event</a></li></ul>
+        </li>
+        <li><a href="#">WEDDING</a>
+          <ul class="am-sub"><li><a href="#">Signature Wedding</a></li></ul>
+        </li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">FACILITIES</button>
+      <ul class="am-list">
+        <li><a href="#">한눈에 보기</a></li>
+        <li><a href="#">FITNESS</a></li>
+        <li><a href="#">POOL</a></li>
+        <li><a href="#">SAUNA</a></li>
+        <li><a href="#">PILATES</a></li>
+        <li><a href="#">BUSINESS CENTER</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">ART COLLECTION</button>
+      <ul class="am-list">
+        <li><a href="#">한눈에 보기</a></li>
+        <li><a href="#">ART COLLECTION</a></li>
+        <li><a href="#">ART TOUR</a></li>
+      </ul>
+      <p class="am-tit sub">LOUNGE</p>
+      <ul class="am-thumbs">
+        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 01</em></a></li>
+        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 02</em></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- ============================================================
+     HERO – 첫 화면만 풀페이지 방식 (js/hero-scroll.js)
+     · 아래로 스크롤 1번 → 영상이 위로 올라가고 본문 노출
+     · 본문 맨 위에서 위로 스크롤 → 영상이 다시 내려옴
+============================================================ -->
+    <!-- 01 HERO -->
+<section class="s-hero" id="hero" aria-label="메인 영상">
+      <div class="hero-media ph dark">MAIN VIDEO (mp4 loop)</div>
+      <div class="hero-ctrl">
+        <button type="button" class="btn-ctrl" id="btnPlay" aria-pressed="true" aria-label="영상 일시정지">❚❚</button>
+        <button type="button" class="btn-ctrl circle" id="btnSound" aria-pressed="false" aria-label="소리 켜기">🔇</button>
+      </div>
+</section>
+
+<!-- 본문 (일반 스크롤) -->
+<main id="content">
+
+    <!-- 02 INTRO -->
+    <section class="s-intro" id="intro">
+      <div class="intro-inner">
+        <span class="ph-box lg">BRAND LOGO</span>
+        <h2 class="h-serif xl">Brand Headline Copy<br>Two Lines Maximum</h2>
+        <a href="#" class="link-more">Read More</a>
+      </div>
+      <span class="sec-line" aria-hidden="true"></span>
+    </section>
+
+    <!-- 03 ROOMS (긴 섹션) -->
+    <section class="s-feature" id="rooms">
+      <div class="feat-head">
+        <p class="label">ROOMS</p>
+        <h2 class="h-serif">Section Title Copy</h2>
+        <p class="feat-txt">
+          섹션 소개 첫 번째 줄 텍스트가 들어갑니다.<br>
+          두 번째 줄 – 공간의 특징과 분위기를 설명하는 문장이 들어갑니다.<br>
+          세 번째 줄 – 마무리 문장이 들어갑니다.
+        </p>
+        <a href="#" class="link-more">View More</a>
+      </div>
+      <div class="feat-visual">
+        <div class="ph feat-img">MAIN IMAGE</div>
+      </div>
+      <div class="feat-story">
+        <div class="ph feat-thumb">B/W IMAGE</div>
+        <div class="feat-desc">
+          <h3 class="h-serif sm">Feature Block Title</h3>
+          <p>소개 텍스트 4줄 분량. 디자인 컨셉이나 브랜드 스토리에 대한 설명이 들어갑니다.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 DINING (긴 섹션) -->
+    <section class="s-feature" id="dining">
+      <div class="feat-head">
+        <p class="label">DINING</p>
+        <h2 class="h-serif">Section Title Copy</h2>
+        <p class="feat-txt">
+          섹션 소개 첫 번째 줄 텍스트가 들어갑니다.<br>
+          두 번째 줄 – 레스토랑의 특징과 분위기를 설명하는 문장이 들어갑니다.<br>
+          세 번째 줄 – 마무리 문장이 들어갑니다.
+        </p>
+        <a href="#" class="link-more">View More</a>
+      </div>
+      <div class="feat-visual">
+        <div class="ph feat-img">MAIN IMAGE</div>
+      </div>
+      <div class="feat-story">
+        <div class="ph feat-thumb">B/W IMAGE</div>
+        <div class="feat-desc">
+          <h3 class="h-serif sm">Feature Block Title</h3>
+          <p>소개 텍스트 4줄 분량. 대표 레스토랑의 역사나 스토리에 대한 설명이 들어갑니다.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 MEETING & WEDDING (긴 섹션) -->
+    <section class="s-feature" id="meeting">
+      <div class="feat-head">
+        <p class="label">MEETING &amp; WEDDING</p>
+        <h2 class="h-serif">Section Title Copy</h2>
+        <p class="feat-txt">
+          섹션 소개 첫 번째 줄 텍스트가 들어갑니다.<br>
+          두 번째 줄 – 연회·웨딩 공간의 특징을 설명하는 문장이 들어갑니다.<br>
+          세 번째 줄 – 마무리 문장이 들어갑니다.
+        </p>
+        <a href="#" class="link-more">View More</a>
+      </div>
+      <div class="feat-visual">
+        <div class="ph feat-img">MAIN IMAGE</div>
+      </div>
+      <div class="feat-story">
+        <div class="ph feat-thumb">B/W IMAGE<small>사진 출처 캡션</small></div>
+        <div class="feat-desc">
+          <h3 class="h-serif sm">Feature Block Title</h3>
+          <p>소개 텍스트 4줄 분량. 대표 연회와 행사 이력에 대한 설명이 들어갑니다.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </div>
+    </section>
+     <!-- 06 APPLY (모집 안내 + 문의처) -->
+    <section class="s-apply" id="apply">
+      <div class="apply-bg ph dark">BACKGROUND IMAGE</div>
+      <div class="apply-inner">
+        <p class="apply-label">APPLY</p>
+        <h2 class="apply-tit">THE PRINCESS 1기 모집</h2>
+        <span class="apply-line" aria-hidden="true"></span>
+        <p class="apply-txt">
+          브랜드의 첫 시작을 함께할 분들을 기다립니다. 자신에게 어울리는 아름다움을 알아가고 싶은 분,<br>
+          막연했던 자기관리에 기준을 세우고 싶은 분, 결혼을 비롯한 삶의 중요한 전환점에서 새로운 모습을<br>
+          준비하고 싶은 분께.
+        </p>
+        <a href="https://www.instagram.com/theph.house/" class="apply-btn" target="_blank" rel="noopener">APPLY NOW</a>
+        <div class="apply-contact">
+          <p class="contact-tit">PARTNERSHIP &amp; INQUIRY</p>
+          <dl>
+            <div><dt>INSTAGRAM</dt><dd><a href="https://www.instagram.com/theph.house/" target="_blank" rel="noopener">@theph.house</a></dd></div>
+            <div><dt>EMAIL</dt><dd><a href="mailto:letter.for.princess@gmail.com">letter.for.princess@gmail.com</a></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+      <footer class="footer" id="footer">
+        <ul class="family-logos" aria-label="계열 호텔">
+          <li><a href="#" class="ph-box">HOTEL 01</a></li>
+          <li><a href="#" class="ph-box">HOTEL 02</a></li>
+          <li><a href="#" class="ph-box">HOTEL 03</a></li>
+          <li><a href="#" class="ph-box">HOTEL 04</a></li>
+          <li><a href="#" class="ph-box">HOTEL 05</a></li>
+          <li><a href="#" class="ph-box">HOTEL 06</a></li>
+          <li><a href="#" class="ph-box">HOTEL 07</a></li>
+          <li><a href="#" class="ph-box">HOTEL 08</a></li>
+          <li><a href="#" class="ph-box">HOTEL 09</a></li>
+        </ul>
+        <div class="foot-main">
+          <span class="ph-box foot-logo">GROUP<br>LOGO</span>
+          <div class="foot-info">
+            <ul class="policy">
+              <li><a href="#">고객센터</a></li>
+              <li><a href="#">웹사이트 이용약관</a></li>
+              <li><a href="#">이메일무단수집금지</a></li>
+              <li><a href="#">영상정보처리기기운영·관리방침</a></li>
+              <li><a href="#" class="point">개인정보처리방침</a></li>
+            </ul>
+            <address>
+              <p>주소 : 서울특별시 OO구 OO로 000 &nbsp; 대표이사 : 홍길동 &nbsp; T. 00-000-0000 &nbsp; E. info@hotel.com</p>
+              <p>사업자등록번호 000-00-00000 &nbsp; 통신판매신고번호 제0000-서울OO-0000호 &nbsp; 호스팅서비스제공자 : OOOO <a href="#" class="btn-biz">사업자정보확인</a></p>
+              <p class="copy">Copyright © 2026 HOTEL GROUP Co. All rights reserved.</p>
+            </address>
+          </div>
+          <div class="foot-side">
+            <div class="family">
+              <button type="button" class="family-btn" aria-expanded="false" aria-controls="familyList">FAMILY SITES <i aria-hidden="true">⌄</i></button>
+              <ul class="family-list" id="familyList">
+                <li><a href="#">Family Site 01</a></li><li><a href="#">Family Site 02</a></li>
+                <li><a href="#">Family Site 03</a></li><li><a href="#">Family Site 04</a></li>
+                <li><a href="#">Family Site 05</a></li><li><a href="#">Family Site 06</a></li>
+              </ul>
+            </div>
+            <ul class="sns">
+              <li><a href="#" class="sns-ico" aria-label="공식 앱">J</a></li>
+              <li><a href="#" class="sns-ico" aria-label="메신저 채널">Ch</a></li>
+              <li><a href="#" class="sns-ico" aria-label="인스타그램">I</a></li>
+              <li><a href="#" class="sns-ico" aria-label="유튜브">▶</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+<script src="js/hero-scroll.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
