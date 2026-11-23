@@ -10,6 +10,7 @@
   /* ---------- 전체메뉴: 슬라이드 다운(열기) / 슬라이드 업(닫기) ---------- */
   const menu = $('#allMenu');
   const hamBtns = $$('.btn-ham');
+  const closeBtn = $('.am-close', menu);
   let lastFocus = null;
 
   function openMenu(e) {
@@ -19,6 +20,7 @@
   menu.classList.add('open');                          // 슬라이드 다운
   document.documentElement.classList.add('menu-open'); // 미니 헤더 유지 + 햄버거 사선
   hamBtns.forEach((b) => { b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', '전체메뉴 닫기'); });
+  closeBtn.focus();
   }
   function closeMenu() {
     if (!menu.classList.contains('open')) return;
@@ -31,7 +33,11 @@
   }
   const toggleMenu = (e) => (menu.classList.contains('open') ? closeMenu() : openMenu(e));
   hamBtns.forEach((b) => b.addEventListener('click', toggleMenu));
-  $('.am-close', menu).addEventListener('click', closeMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  // 메뉴가 열려 있는 동안 Tab이 메뉴 뒤로 빠져나가지 않게
+  document.addEventListener('focusin', (e) => {
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !e.target.closest('.hd-hero')) closeBtn.focus();
+  });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   document.addEventListener('fp:navigate', closeMenu); // 메뉴 안 앵커로 섹션 이동 시 닫기
 

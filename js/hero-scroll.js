@@ -18,7 +18,8 @@
     edgeIdle: 180,      // 맨 위에서 막힌 뒤 휠이 이만큼 멈춰야 "준비"
     wheelThreshold: 60, // 준비 상태에서 이만큼 휠이 쌓이면 영상으로
     touchThreshold: 70, // 스와이프 거리(px)
-    cooldown: 250,      // 전환 직후 관성 무시(ms)
+    cooldown: 1,      // 전환 직후 관성 무시(ms) – 잠금이 풀린 뒤 휠 판정만 잠깐 쉼
+    unlockEarly: 300,   // 영상이 다 올라가기 이만큼 전(ms)부터 본문 스크롤 허용
     edgeGap: 2          // 맨 위 판정 허용 오차(px)
   };
 
@@ -45,9 +46,14 @@
     edge.timer = setTimeout(() => { edge.state = 'armed'; edge.acc = 0; }, OPT.edgeIdle);
   }
 
-  function finish(after) {
+  function finish(after, lock) {
     const dur = reduceMotion ? 0 : OPT.duration;
     animating = true;
+    // 전환 중 문서 스크롤 잠금: 취소 불가 휠·관성은 preventDefault로 못 막음. 잠그면 맨 위로 고정되므로 앵커 이동엔 쓰지 않음
+    if (lock) {
+      root.classList.add('fp-lock');
+      setTimeout(() => root.classList.remove('fp-lock'), Math.max(0, dur - OPT.unlockEarly));
+    }
     setTimeout(() => {
       animating = false;
       cooldownUntil = performance.now() + OPT.cooldown;
@@ -63,7 +69,7 @@
     header.dataset.mode = 'default';
     resetEdge();
     if (targetId) scrollToId(targetId, true); else window.scrollTo(0, 0);
-    finish(() => { if (atTop()) arm(); });            // 도착 직후 위로 1번 → 바로 영상
+    finish(() => { if (atTop()) arm(); }, !targetId); // 도착 직후 위로 1번 → 바로 영상
   }
 
   function toHero() {
@@ -79,8 +85,7 @@
   function scrollToId(id, instant) {
     const el = document.getElementById(id);
     if (!el) return;
-    const headerH = parseInt(getComputedStyle(root).getPropertyValue('--header-h'), 10) || 0;
-    const y = el.getBoundingClientRect().top + window.scrollY - headerH;
+    const y = el.getBoundingClientRect().top + window.scrollY - header.offsetHeight;
     window.scrollTo({ top: Math.max(0, y), behavior: instant || reduceMotion ? 'auto' : 'smooth' });
   }
 
@@ -96,7 +101,7 @@
       return;
     }
 
-    if (busy()) { if (atTop() && dir < 0) e.preventDefault(); return; }
+    if (busy()) { if (atTop() && dir < 0) e.preventDefault(); return; } // 잠금(fp-lock)이 풀린 뒤엔 아래 방향 스크롤 허용
     if (dir > 0 || !atTop()) {                         // 본문 일반 스크롤
       if (edge.state !== 'none' && dir > 0) resetEdge();
       return;
@@ -127,7 +132,8 @@
   }, { passive: true });
 
   window.addEventListener('touchmove', (e) => {
-    if (!touch || busy()) { if (onHero) e.preventDefault(); return; }
+    if (!touch) return;                                // 전체메뉴 등 무시 영역: 기본 스크롤 허용
+    if (busy()) { if (onHero) e.preventDefault(); return; } // 전환 중엔 fp-lock이 본문 스크롤을 막음
     const dx = touch.x - e.touches[0].clientX;
     const dy = touch.y - e.touches[0].clientY;        // +: 아래로 가려는 방향
     if (!touch.axis) {
@@ -161,7 +167,8 @@
   document.addEventListener('keydown', (e) => {
     const tag = (e.target.tagName || '').toLowerCase();
     if (['input', 'textarea', 'select'].includes(tag) || e.target.isContentEditable) return;
-    if (document.querySelector('.all-menu.open')) return;
+    if (root.classList.contains('menu-open')) return;
+    if (e.key === ' ' && e.target.closest('button, a')) return; // 스페이스는 버튼/링크 실행에 양보
     const down = ['ArrowDown', 'PageDown'].includes(e.key) || (e.key === ' ' && !e.shiftKey);
     const up = ['ArrowUp', 'PageUp'].includes(e.key) || (e.key === ' ' && e.shiftKey) || e.key === 'Home';
 
@@ -184,7 +191,16 @@
     e.preventDefault();
     document.dispatchEvent(new CustomEvent('fp:navigate'));  // 전체메뉴 닫기용
     if (id === 'hero') { window.scrollTo(0, 0); toHero(); }
-    else { toContent(id); history.replaceState(null, '', '#' + id); }
+    else {
+      toContent(id); history.replaceState(null, '', '#' + id);
+      const el = document.getElementById(id);          // 본문 바로가기 등: 키보드 포커스도 함께 이동
+      if (el) { el.tabIndex = -1; el.focus({ preventScroll: true }); }
+    }
+  });
+
+  /* ---------- 포커스: 영상 화면에서 Tab으로 가려진 요소에 닿으면 본문으로 ---------- */
+  document.addEventListener('focusin', (e) => {
+    if (onHero && !ignored(e) && !e.target.closest('#hero, .hd-hero, .skip')) toContent();
   });
 
   /* ---------- 현재 섹션 → GNB 표시 ---------- */
@@ -210,6 +226,4 @@
   } else {
     header.dataset.mode = 'hero';
   }
-
-  window.HeroScroll = { toHero, toContent, get onHero() { return onHero; } };
 })();
