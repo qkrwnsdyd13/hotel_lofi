@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko" class="is-content">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ – Low-fidelity Wireframe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+
+<a href="#content" class="skip">본문 바로가기</a>
+
+<!-- ============================================================
+     HEADER
+     - data-mode="default"    : 메인 영상 위 (햄버거 · 상품찾기 · KR, 투명)
+     - data-mode="default" : 그 외 섹션 (상단 유틸바 + GNB, 흰 배경)
+============================================================ -->
+<header class="header" id="header" data-mode="default">
+
+  <!-- 히어로용 미니 헤더 -->
+  <div class="hd-hero">
+    <button type="button" class="btn-ham" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#" class="hd-link">상품찾기 <i class="ico-search" aria-hidden="true"></i></a>
+    <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+  </div>
+
+  <!-- 기본 헤더 -->
+  <div class="hd-full">
+    <div class="util-bar">
+      <div class="util-left">
+        <a href="#" class="group-link">HOTEL GROUP</a>
+        <a href="#" class="hd-link">호텔찾기 <i class="ico-search" aria-hidden="true"></i></a>
+        <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+      </div>
+      <ul class="util-right">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">예약확인</a></li>
+        <!-- <li><a href="#">멤버십</a></li> -->
+      </ul>
+    </div>
+    <div class="gnb-bar">
+      <h1 class="logo"><a href="index.html"><span class="ph-box">LOGO</span></a></h1>
+      <nav class="gnb" aria-label="주메뉴">
+        <a href="reservation.html" class="reserv-btn">RESERVATION <i class="ico-grid" aria-hidden="true"></i></a>
+        <span class="gnb-sep" aria-hidden="true"></span>
+        <ul class="gnb-list">
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="programs.html">PROGRAMS</a></li>
+          <li><a href="partners.html">PARTNERS</a></li>
+          <li><a href="magazine.html">MAGAZINE</a></li>
+          <li><a href="community.html">COMMUNITY</a></li>
+          <li><a href="faq.html" class="on" aria-current="page">FAQ</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="btn-ham dark" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- 서브바 (스크롤 시 GNB 줄 대신 노출) -->
+    <div class="sub-bar">
+      <p class="sub-name"><a href="index.html">HOTEL NAME</a></p>
+      <a href="reservation.html" class="sub-reserv">RESERVATION</a>
+      <nav class="crumb" aria-label="현재 위치">
+        <ol>
+          <li><a href="index.html">HOME</a></li>
+          <li class="dd">
+            <button type="button" class="dd-btn" aria-expanded="false">FAQ <i class="caret" aria-hidden="true"></i></button>
+            <ul class="dd-list">
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="programs.html">PROGRAM</a></li>
+              <li><a href="partners.html">PARTNERS</a></li>
+              <li><a href="magazine.html">MAGAZINE</a></li>
+              <li><a href="#">COMMUNITY</a></li>
+              <li><a href="faq.html" aria-current="true">FAQ</a></li>
+              <li><a href="reservation.html">RESERVATION</a></li>
+            </ul>
+          </li>
+          <li class="dd">
+            <button type="button" class="dd-btn" aria-expanded="false">FAQ <i class="caret" aria-hidden="true"></i></button>
+            <ul class="dd-list">
+              <li><a href="faq.html" aria-current="page">FAQ</a></li>
+              <li><a href="#">FITNESS</a></li>
+              <li><a href="#">POOL</a></li>
+              <li><a href="#">SAUNA</a></li>
+              <li><a href="#">PILATES</a></li>
+              <li><a href="#">BUSINESS CENTER</a></li>
+            </ul>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     전체메뉴 (슬라이드 다운 / 슬라이드 업)
+============================================================ -->
+<div class="all-menu" id="allMenu" aria-hidden="true" inert data-fp-ignore>
+  <div class="am-head">
+    <span class="ph-box emblem">EMBLEM</span>
+    <button type="button" class="am-close" aria-label="전체메뉴 닫기"><span></span><span></span></button>
+  </div>
+
+  <nav class="am-body" aria-label="전체메뉴">
+    <div class="am-col">
+      <button type="button" class="am-tit">ABOUT</button>
+      <ul class="am-list">
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="#">OUR PROMISE</a></li>
+        <li><a href="#">LOCATION &amp; TRANSPORTATION</a></li>
+        <li><a href="faq.html" aria-current="page">FAQ</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">PROGRAM</button>
+      <ul class="am-list">
+        <li><a href="programs.html">한눈에 보기</a></li>
+        <li><a href="#">ROOM</a>
+          <ul class="am-sub"><li><a href="#">Room Type 01</a></li><li><a href="#">Room Type 02</a></li><li><a href="#">Room Type 03</a></li><li><a href="#">Room Type 04</a></li></ul>
+        </li>
+        <li><a href="#">SUITE</a>
+          <ul class="am-sub"><li><a href="#">Suite Type 01</a></li><li><a href="#">Suite Type 02</a></li><li><a href="#">Suite Type 03</a></li></ul>
+        </li>
+        <li><a href="#">SPECIALTY SUITE</a>
+          <ul class="am-sub"><li><a href="#">Specialty 01</a></li><li><a href="#">Specialty 02</a></li></ul>
+        </li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">PARTNERS</button>
+      <ul class="am-list">
+        <li><a href="partners.html">한눈에 보기</a></li>
+        <li><a href="#">Restaurant 01</a></li>
+        <li><a href="#">Lounge &amp; Bar</a></li>
+        <li><a href="#">Restaurant 02</a></li>
+        <li><a href="#">Restaurant 03</a></li>
+        <li><a href="#">Deli</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">MAGAZINE</button>
+      <ul class="am-list">
+        <li><a href="magazine.html">한눈에 보기</a></li>
+        <li><a href="#">PACKAGE</a></li>
+        <li><a href="#">EVENT</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">COMMUNITY</button>
+      <ul class="am-list">
+        <li><a href="index.html#meeting">한눈에 보기</a></li>
+        <li><a href="#">MEETING</a>
+          <ul class="am-sub"><li><a href="#">Signature Event</a></li></ul>
+        </li>
+        <li><a href="#">WEDDING</a>
+          <ul class="am-sub"><li><a href="#">Signature Wedding</a></li></ul>
+        </li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">FAQ</button>
+      <ul class="am-list">
+        <li><a href="faq.html" aria-current="page">한눈에 보기</a></li>
+        <li><a href="#">FITNESS</a></li>
+        <li><a href="#">POOL</a></li>
+        <li><a href="#">SAUNA</a></li>
+        <li><a href="#">PILATES</a></li>
+        <li><a href="#">BUSINESS CENTER</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">RESERVATION</button>
+      <ul class="am-list">
+        <li><a href="faq.html" aria-current="page">한눈에 보기</a></li>
+        <li><a href="#">ART COLLECTION</a></li>
+        <li><a href="#">ART TOUR</a></li>
+      </ul>
+      <p class="am-tit sub">LOUNGE</p>
+      <ul class="am-thumbs">
+        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 01</em></a></li>
+        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 02</em></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- 본문 (일반 스크롤 – 메인 영상 없음) -->
+<main id="content" class="page-faq">
+
+    <!-- 01 PAGE INTRO -->
+    <section class="sp-intro">
+      <div class="sp-inner">
+        <h2 class="sp-page-tit">FAQ</h2>
+        <p class="sp-page-txt">
+          페이지 소개 첫 번째 줄 – 궁금한 사항을 남겨주시면 신속하게 답변 드리겠습니다.<br>
+          두 번째 줄 – 항상 고객의 소리에 귀 기울이겠다는 문장이 들어갑니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 02 SEARCH – 카테고리 드롭다운 · 검색어 (회색 띠) -->
+    <section class="sp-search" aria-label="FAQ 검색">
+      <form class="sp-inner search-row" id="fqSearch" action="#">
+        <div class="fq-select" id="fqSelect">
+          <span class="blind" id="fqSelLabel">검색 카테고리</span>
+          <button type="button" class="fq-sel-btn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="fqSelLabel fqSelValue">
+            <span id="fqSelValue">전체</span><i class="fq-sel-arrow" aria-hidden="true"></i>
+          </button>
+          <!-- 목록이 길면 스크롤 (max-height) -->
+          <ul class="fq-sel-list" role="listbox" aria-labelledby="fqSelLabel" tabindex="-1" hidden>
+            <li role="option" id="fqOpt-all" data-value="all" aria-selected="true">전체</li>
+            <li role="option" id="fqOpt-c01" data-value="c01" aria-selected="false">카테고리 01</li>
+            <li role="option" id="fqOpt-c02" data-value="c02" aria-selected="false">카테고리 02</li>
+            <li role="option" id="fqOpt-c03" data-value="c03" aria-selected="false">카테고리 03</li>
+            <li role="option" id="fqOpt-c04" data-value="c04" aria-selected="false">카테고리 04</li>
+            <li role="option" id="fqOpt-c05" data-value="c05" aria-selected="false">카테고리 05</li>
+            <li role="option" id="fqOpt-c06" data-value="c06" aria-selected="false">카테고리 06</li>
+          </ul>
+        </div>
+        <label class="blind" for="fqKeyword">검색어</label>
+        <input type="search" id="fqKeyword" class="search-input" placeholder="검색어를 입력해주세요.">
+        <button type="submit" class="btn-search">검색</button>
+      </form>
+    </section>
+
+    <!-- 03 LIST – 탭 + 아코디언 + 페이지 번호 -->
+    <section class="fq-list" aria-label="자주 묻는 질문">
+      <div class="sp-inner">
+        <ul class="fq-tabs" aria-label="카테고리">
+          <li><button type="button" class="fq-tab" data-cat="all" aria-pressed="true">전체</button></li>
+          <li><button type="button" class="fq-tab" data-cat="c01" aria-pressed="false">카테고리 01</button></li>
+          <li><button type="button" class="fq-tab" data-cat="c02" aria-pressed="false">카테고리 02</button></li>
+          <li><button type="button" class="fq-tab" data-cat="c03" aria-pressed="false">카테고리 03</button></li>
+          <li><button type="button" class="fq-tab" data-cat="c04" aria-pressed="false">카테고리 04</button></li>
+          <li><button type="button" class="fq-tab" data-cat="c05" aria-pressed="false">카테고리 05</button></li>
+          <li><button type="button" class="fq-tab" data-cat="c06" aria-pressed="false">카테고리 06</button></li>
+        </ul>
+
+        <!-- 질문 추가: <li class="fq-item" data-cat="카테고리값"> 블록 복사 (id 번호 fqQ00 / fqA00 겹치지 않게)
+             · 한 페이지 10개 (js/faq.js PER_PAGE) – 넘으면 페이지 번호 자동 생성 -->
+        <ul class="fq-items" id="fqItems">
+          <li class="fq-item" data-cat="c02">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ01" aria-expanded="false" aria-controls="fqA01">
+                <span class="fq-cat">카테고리 02</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 01?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA01" role="region" aria-labelledby="fqQ01" hidden>
+              <div class="fq-a-in">
+                <p>답변 첫 문단이 들어갑니다. 질문에 대한 안내 문장이 들어갑니다.</p>
+                <p>[절차 안내]<br>
+                  1. 첫 번째 단계 안내 문장<br>
+                  2. 두 번째 단계 안내 문장<br>
+                  3. 세 번째 단계 안내 문장<br>
+                  4. 네 번째 단계 안내 문장</p>
+                <p>문의 : 00-000-0000 / info@hotel.com</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c03">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ02" aria-expanded="false" aria-controls="fqA02">
+                <span class="fq-cat">카테고리 03</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 02?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA02" role="region" aria-labelledby="fqQ02" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c03">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ03" aria-expanded="false" aria-controls="fqA03">
+                <span class="fq-cat">카테고리 03</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 03?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA03" role="region" aria-labelledby="fqQ03" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c03">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ04" aria-expanded="false" aria-controls="fqA04">
+                <span class="fq-cat">카테고리 03</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 04?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA04" role="region" aria-labelledby="fqQ04" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c03">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ05" aria-expanded="false" aria-controls="fqA05">
+                <span class="fq-cat">카테고리 03</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 05?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA05" role="region" aria-labelledby="fqQ05" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c01">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ06" aria-expanded="false" aria-controls="fqA06">
+                <span class="fq-cat">카테고리 01</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 06?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA06" role="region" aria-labelledby="fqQ06" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c01">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ07" aria-expanded="false" aria-controls="fqA07">
+                <span class="fq-cat">카테고리 01</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 07?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA07" role="region" aria-labelledby="fqQ07" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c02">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ08" aria-expanded="false" aria-controls="fqA08">
+                <span class="fq-cat">카테고리 02</span>
+                <span class="fq-tit">질문이 긴 경우의 예시입니다. 두 줄 이상이 되면 자연스럽게 줄바꿈 됩니다? (부가 설명이 괄호로 붙는 경우)</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA08" role="region" aria-labelledby="fqQ08" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c02">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ09" aria-expanded="false" aria-controls="fqA09">
+                <span class="fq-cat">카테고리 02</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 09?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA09" role="region" aria-labelledby="fqQ09" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c02">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ10" aria-expanded="false" aria-controls="fqA10">
+                <span class="fq-cat">카테고리 02</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 10?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA10" role="region" aria-labelledby="fqQ10" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c04">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ11" aria-expanded="false" aria-controls="fqA11">
+                <span class="fq-cat">카테고리 04</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 11?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA11" role="region" aria-labelledby="fqQ11" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c05">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ12" aria-expanded="false" aria-controls="fqA12">
+                <span class="fq-cat">카테고리 05</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 12?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA12" role="region" aria-labelledby="fqQ12" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c06">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ13" aria-expanded="false" aria-controls="fqA13">
+                <span class="fq-cat">카테고리 06</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 13?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA13" role="region" aria-labelledby="fqQ13" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c04">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ14" aria-expanded="false" aria-controls="fqA14">
+                <span class="fq-cat">카테고리 04</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 14?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA14" role="region" aria-labelledby="fqQ14" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c01">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ15" aria-expanded="false" aria-controls="fqA15">
+                <span class="fq-cat">카테고리 01</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 15?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA15" role="region" aria-labelledby="fqQ15" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+          <li class="fq-item" data-cat="c05">
+            <h3 class="fq-q">
+              <button type="button" id="fqQ16" aria-expanded="false" aria-controls="fqA16">
+                <span class="fq-cat">카테고리 05</span>
+                <span class="fq-tit">자주 묻는 질문 제목이 들어갑니다 16?</span>
+                <i class="fq-arrow" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div class="fq-a" id="fqA16" role="region" aria-labelledby="fqQ16" hidden>
+              <div class="fq-a-in">
+                <p>답변 내용이 들어갑니다. 한두 문장 분량의 안내 문장이 들어갑니다.</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="fq-empty" id="fqEmpty" hidden>검색 결과가 없습니다.</p>
+
+        <nav class="fq-paging" aria-label="페이지 이동">
+          <ol id="fqPages"></ol>
+        </nav>
+      </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+      <footer class="footer" id="footer">
+        <ul class="family-logos" aria-label="계열 호텔">
+          <li><a href="#" class="ph-box">HOTEL 01</a></li>
+          <li><a href="#" class="ph-box">HOTEL 02</a></li>
+          <li><a href="#" class="ph-box">HOTEL 03</a></li>
+          <li><a href="#" class="ph-box">HOTEL 04</a></li>
+          <li><a href="#" class="ph-box">HOTEL 05</a></li>
+          <li><a href="#" class="ph-box">HOTEL 06</a></li>
+          <li><a href="#" class="ph-box">HOTEL 07</a></li>
+          <li><a href="#" class="ph-box">HOTEL 08</a></li>
+          <li><a href="#" class="ph-box">HOTEL 09</a></li>
+        </ul>
+        <div class="foot-main">
+          <span class="ph-box foot-logo">GROUP<br>LOGO</span>
+          <div class="foot-info">
+            <ul class="policy">
+              <li><a href="#">고객센터</a></li>
+              <li><a href="#">웹사이트 이용약관</a></li>
+              <li><a href="#">이메일무단수집금지</a></li>
+              <li><a href="#">영상정보처리기기운영·관리방침</a></li>
+              <li><a href="#" class="point">개인정보처리방침</a></li>
+            </ul>
+            <address>
+              <p>주소 : 서울특별시 OO구 OO로 000 &nbsp; 대표이사 : 홍길동 &nbsp; T. 00-000-0000 &nbsp; E. info@hotel.com</p>
+              <p>사업자등록번호 000-00-00000 &nbsp; 통신판매신고번호 제0000-서울OO-0000호 &nbsp; 호스팅서비스제공자 : OOOO <a href="#" class="btn-biz">사업자정보확인</a></p>
+              <p class="copy">Copyright © 2026 HOTEL GROUP Co. All rights reserved.</p>
+            </address>
+          </div>
+          <div class="foot-side">
+            <div class="family">
+              <button type="button" class="family-btn" aria-expanded="false" aria-controls="familyList">FAMILY SITES <i aria-hidden="true">⌄</i></button>
+              <ul class="family-list" id="familyList">
+                <li><a href="#">Family Site 01</a></li><li><a href="#">Family Site 02</a></li>
+                <li><a href="#">Family Site 03</a></li><li><a href="#">Family Site 04</a></li>
+                <li><a href="#">Family Site 05</a></li><li><a href="#">Family Site 06</a></li>
+              </ul>
+            </div>
+            <ul class="sns">
+              <li><a href="#" class="sns-ico" aria-label="공식 앱">J</a></li>
+              <li><a href="#" class="sns-ico" aria-label="메신저 채널">Ch</a></li>
+              <li><a href="#" class="sns-ico" aria-label="인스타그램">I</a></li>
+              <li><a href="#" class="sns-ico" aria-label="유튜브">▶</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+<script src="js/ui.js"></script>
+<script src="js/sub.js"></script>
+<script src="js/faq.js"></script>
+</body>
+</html>

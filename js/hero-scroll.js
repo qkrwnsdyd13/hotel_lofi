@@ -203,19 +203,6 @@
     if (onHero && !ignored(e) && !e.target.closest('#hero, .hd-hero, .skip')) toContent();
   });
 
-  /* ---------- 현재 섹션 → GNB 표시 ---------- */
-  const gnbLinks = Array.from(document.querySelectorAll('.gnb-list a[href^="#"]'));
-  const watched = gnbLinks.map((a) => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
-  if ('IntersectionObserver' in window && watched.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        gnbLinks.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id));
-      });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    watched.forEach((el) => io.observe(el));
-  }
-
   /* ---------- init ---------- */
   const startId = location.hash.slice(1);
   if (startId && startId !== 'hero' && document.getElementById(startId)) {

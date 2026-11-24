@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* ==========================================================
+   ABOUT US – Low-fidelity Wireframe (style.css → sub.css 다음에 로드)
+========================================================== */
+/* 섹션 헤드(.ab-head/.ab-tit/.ab-sub/.ab-txt)는 sub.css */
+.page-about .sec-line { width: calc(100% - 500px); max-width: var(--inner); }
+
+/* ==========================================================
+   01 PAGE INTRO
+========================================================== */
+.ab-intro { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 110px 24px 0; }
+.ab-page-tit { font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 1.1; letter-spacing: .02em; color: #111; }
+.ab-page-txt { margin-top: 36px; font-size: 17px; line-height: 1.9; color: #333; }
+.ab-emblem { width: 360px; aspect-ratio: 360 / 300; margin-top: 56px; }
+.ab-emblem small, .crest-bg small { font-size: 11px; }
+
+/* ==========================================================
+   02 THE CREST – 3열 × 2행
+========================================================== */
+.ab-crest { padding-top: 70px; }
+.crest-body { position: relative; max-width: var(--inner); margin: 60px auto 0; padding: 0 24px; }
+.crest-bg {                 /* 하단에 깔린 흐린 건물 사진 */
+  position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: min(1320px, calc(100% - 48px)); height: 72%;
+  opacity: .45; align-items: flex-end; justify-content: flex-end; padding: 0 0 16px;
+}
+.crest-grid {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 70px; column-gap: 40px;
+  padding-bottom: 160px; text-align: center;
+}
+.crest-item { display: flex; flex-direction: column; justify-content: center; }
+.crest-name { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 28px; color: #222; margin-bottom: 10px; }
+.crest-item p { font-size: 16px; line-height: 1.9; color: #333; }
+.crest-lead p { font-size: 16px; line-height: 2; }
+
+/* ==========================================================
+   03 THE HIGHEST LUXURY – 로고 패널 + 흑백 사진
+========================================================== */
+.ab-brand .sec-line { margin-top: 56px; }
+.brand-row { display: flex; max-width: 1280px; margin: 12px auto 12px; padding: 0 24px; }
+.brand-row > * { flex: 1 1 50%; }
+.brand-panel { background: var(--panel); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 40px; }
+.brand-main { min-width: 160px; height: 160px; line-height: 1.5; }
+.brand-logos { width: 100%; max-width: 380px; margin-top: 50px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #bbb; }
+.brand-logos li { display: flex; align-items: center; justify-content: center; height: 78px; border-bottom: 1px solid #bbb; }
+.brand-logos li.full { grid-column: 1 / -1; height: 110px; border-bottom: 0; }
+.brand-logos .ph-box { min-width: 110px; height: 34px; font-size: 11px; color: #888; border-color: #aaa; }
+.brand-img { aspect-ratio: 640 / 850; }
+
+/* ==========================================================
+   04 LUXURY COLLECTION – 풀폭 흑백 + 반투명 밴드
+========================================================== */
+.ab-collection { position: relative; margin-top: 160px; padding: 180px 0 190px; overflow: hidden; }
+.coll-bg { position: absolute; inset: 0; align-items: flex-start; justify-content: flex-start; padding: 20px 40px; font-size: 12px; }
+.coll-band { position: relative; z-index: 1; background: rgba(240, 240, 240, .9); padding: 150px 24px 150px; text-align: center; }
+.coll-logo { margin-top: 60px; min-width: 300px; height: 150px; line-height: 1.6; }
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+@media (max-width: 1600px) {
+  .page-about .sec-line { width: calc(100% - 240px); }
+}
+
+@media (max-width: 1280px) {
+  .crest-name { font-size: 24px; }
+  .crest-item p { font-size: 15px; }
+}
+
+@media (max-width: 1024px) {
+  .ab-page-txt br { display: none; }
+  .page-about .sec-line { width: calc(100% - 48px); }
+
+  .ab-intro { padding-top: 64px; }
+  .ab-page-tit { font-size: 40px; }
+  .ab-page-txt { margin-top: 20px; font-size: 15px; }
+  .ab-emblem { width: 240px; margin-top: 36px; }
+
+  .ab-crest { padding-top: 56px; }
+  .crest-body { margin-top: 36px; }
+  .crest-grid { grid-template-columns: 1fr; row-gap: 36px; padding-bottom: 260px; }
+  .crest-lead { order: -1; }                 /* 설명 문단을 맨 위로 */
+  .crest-lead p br { display: none; }
+  .crest-bg { height: 240px; }
+
+  .ab-brand .sec-line { margin-top: 36px; }
+  .brand-row { flex-direction: column; margin: 24px auto; }
+  .brand-panel { padding: 48px 24px; }
+  .brand-main { min-width: 120px; height: 120px; }
+  .brand-img { aspect-ratio: 4 / 3; }
+
+  .ab-collection { margin-top: 80px; padding: 100px 0; }
+  .coll-band { padding: 72px 24px; }
+  .coll-logo { margin-top: 36px; min-width: 220px; height: 110px; }
+}
+
+@media (max-width: 640px) {
+  .ab-page-tit { font-size: 32px; }
+  .brand-logos li { height: 64px; }
+}

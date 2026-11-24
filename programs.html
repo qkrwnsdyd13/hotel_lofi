@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko" class="is-content">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROGRAMS – Low-fidelity Wireframe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link rel="stylesheet" href="css/programs.css">
+</head>
+<body>
+
+<a href="#content" class="skip">본문 바로가기</a>
+
+<!-- ============================================================
+     HEADER
+     - data-mode="default"    : 메인 영상 위 (햄버거 · 상품찾기 · KR, 투명)
+     - data-mode="default" : 그 외 섹션 (상단 유틸바 + GNB, 흰 배경)
+============================================================ -->
+<header class="header" id="header" data-mode="default">
+
+  <!-- 히어로용 미니 헤더 -->
+  <div class="hd-hero">
+    <button type="button" class="btn-ham" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#" class="hd-link">상품찾기 <i class="ico-search" aria-hidden="true"></i></a>
+    <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+  </div>
+
+  <!-- 기본 헤더 -->
+  <div class="hd-full">
+    <div class="util-bar">
+      <div class="util-left">
+        <a href="#" class="group-link">HOTEL GROUP</a>
+        <a href="#" class="hd-link">호텔찾기 <i class="ico-search" aria-hidden="true"></i></a>
+        <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+      </div>
+      <ul class="util-right">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">예약확인</a></li>
+        <!-- <li><a href="#">멤버십</a></li> -->
+      </ul>
+    </div>
+    <div class="gnb-bar">
+      <h1 class="logo"><a href="index.html"><span class="ph-box">LOGO</span></a></h1>
+      <nav class="gnb" aria-label="주메뉴">
+        <a href="reservation.html" class="reserv-btn">RESERVATION <i class="ico-grid" aria-hidden="true"></i></a>
+        <span class="gnb-sep" aria-hidden="true"></span>
+        <ul class="gnb-list">
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="programs.html" class="on" aria-current="page">PROGRAMS</a></li>
+          <li><a href="partners.html">PARTNERS</a></li>
+          <li><a href="magazine.html">MAGAZINE</a></li>
+          <li><a href="community.html">COMMUNITY</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="btn-ham dark" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- 서브바 (스크롤 시 GNB 줄 대신 노출) -->
+    <div class="sub-bar">
+      <p class="sub-name"><a href="index.html">HOTEL NAME</a></p>
+      <a href="reservation.html" class="sub-reserv">RESERVATION</a>
+      <nav class="crumb" aria-label="현재 위치">
+        <ol>
+          <li><a href="index.html">HOME</a></li>
+          <li class="dd">
+            <button type="button" class="dd-btn" aria-expanded="false">PROGRAM <i class="caret" aria-hidden="true"></i></button>
+            <ul class="dd-list">
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="programs.html" aria-current="true">PROGRAM</a></li>
+              <li><a href="partners.html">PARTNERS</a></li>
+              <li><a href="magazine.html">MAGAZINE</a></li>
+              <li><a href="#">COMMUNITY</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="reservation.html">RESERVATION</a></li>
+            </ul>
+          </li>
+          <li class="dd">
+            <button type="button" class="dd-btn" aria-expanded="false">PROGRAMS <i class="caret" aria-hidden="true"></i></button>
+            <ul class="dd-list">
+              <li><a href="programs.html" aria-current="page">PROGRAMS</a></li>
+              <li><a href="#">ROOM</a></li>
+              <li><a href="#">SUITE</a></li>
+              <li><a href="#">SPECIALTY SUITE</a></li>
+            </ul>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     전체메뉴 (슬라이드 다운 / 슬라이드 업)
+============================================================ -->
+<div class="all-menu" id="allMenu" aria-hidden="true" inert data-fp-ignore>
+  <div class="am-head">
+    <span class="ph-box emblem">EMBLEM</span>
+    <button type="button" class="am-close" aria-label="전체메뉴 닫기"><span></span><span></span></button>
+  </div>
+
+  <nav class="am-body" aria-label="전체메뉴">
+    <div class="am-col">
+      <button type="button" class="am-tit">ABOUT</button>
+      <ul class="am-list">
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="#">OUR PROMISE</a></li>
+        <li><a href="#">LOCATION &amp; TRANSPORTATION</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">PROGRAM</button>
+      <ul class="am-list">
+        <li><a href="programs.html" aria-current="page">한눈에 보기</a></li>
+        <li><a href="#">ROOM</a>
+          <ul class="am-sub"><li><a href="#">Room Type 01</a></li><li><a href="#">Room Type 02</a></li><li><a href="#">Room Type 03</a></li><li><a href="#">Room Type 04</a></li></ul>
+        </li>
+        <li><a href="#">SUITE</a>
+          <ul class="am-sub"><li><a href="#">Suite Type 01</a></li><li><a href="#">Suite Type 02</a></li><li><a href="#">Suite Type 03</a></li></ul>
+        </li>
+        <li><a href="#">SPECIALTY SUITE</a>
+          <ul class="am-sub"><li><a href="#">Specialty 01</a></li><li><a href="#">Specialty 02</a></li></ul>
+        </li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">PARTNERS</button>
+      <ul class="am-list">
+        <li><a href="partners.html">한눈에 보기</a></li>
+        <li><a href="#">Restaurant 01</a></li>
+        <li><a href="#">Lounge &amp; Bar</a></li>
+        <li><a href="#">Restaurant 02</a></li>
+        <li><a href="#">Restaurant 03</a></li>
+        <li><a href="#">Deli</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">MAGAZINE</button>
+      <ul class="am-list">
+        <li><a href="magazine.html">한눈에 보기</a></li>
+        <li><a href="#">PACKAGE</a></li>
+        <li><a href="#">EVENT</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">COMMUNITY</button>
+      <ul class="am-list">
+        <li><a href="index.html#meeting">한눈에 보기</a></li>
+        <li><a href="#">MEETING</a>
+          <ul class="am-sub"><li><a href="#">Signature Event</a></li></ul>
+        </li>
+        <li><a href="#">WEDDING</a>
+          <ul class="am-sub"><li><a href="#">Signature Wedding</a></li></ul>
+        </li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">FAQ</button>
+      <ul class="am-list">
+        <li><a href="faq.html">한눈에 보기</a></li>
+        <li><a href="#">FITNESS</a></li>
+        <li><a href="#">POOL</a></li>
+        <li><a href="#">SAUNA</a></li>
+        <li><a href="#">PILATES</a></li>
+        <li><a href="#">BUSINESS CENTER</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">RESERVATION</button>
+      <ul class="am-list">
+        <li><a href="faq.html">한눈에 보기</a></li>
+        <li><a href="#">ART COLLECTION</a></li>
+        <li><a href="#">ART TOUR</a></li>
+      </ul>
+      <p class="am-tit sub">LOUNGE</p>
+      <ul class="am-thumbs">
+        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 01</em></a></li>
+        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 02</em></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- 본문 (일반 스크롤 – 메인 영상 없음) -->
+<main id="content" class="page-programs">
+
+    <!-- 01 PAGE INTRO – 왼쪽 정렬 타이틀 + 소개 -->
+    <section class="sp-intro">
+      <div class="sp-inner">
+        <h2 class="sp-page-tit">PROGRAMS</h2>
+        <p class="sp-page-txt">
+          페이지 소개 첫 번째 줄 – 프로그램이 지향하는 가치와 브랜드 정신을 설명하는 문장이 들어갑니다.<br>
+          두 번째 줄 – 고객에게 제공하는 경험을 소개하는 문장이 들어갑니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 02 SEARCH – 기간(달력) · 검색어 · 키워드 (회색 띠) -->
+    <section class="sp-search" aria-label="프로그램 검색">
+      <form class="sp-inner" id="pgSearch" action="#" onsubmit="return false;">
+        <div class="search-row">
+          <div class="date-range">
+            <div class="date-field" data-role="start">
+              <label class="blind" for="dateStart">시작일</label>
+              <input type="text" id="dateStart" class="date-input" placeholder="YYYY-MM-DD" inputmode="numeric" maxlength="10" autocomplete="off">
+              <button type="button" class="date-ico" aria-label="시작일 달력 열기" aria-expanded="false"></button>
+            </div>
+            <span class="date-dash" aria-hidden="true">-</span>
+            <div class="date-field" data-role="end">
+              <label class="blind" for="dateEnd">종료일</label>
+              <input type="text" id="dateEnd" class="date-input" placeholder="YYYY-MM-DD" inputmode="numeric" maxlength="10" autocomplete="off">
+              <button type="button" class="date-ico" aria-label="종료일 달력 열기" aria-expanded="false"></button>
+            </div>
+          </div>
+          <label class="blind" for="pgKeyword">검색어</label>
+          <input type="search" id="pgKeyword" class="search-input" placeholder="검색어를 입력해주세요.">
+          <button type="submit" class="btn-search">검색</button>
+          <!-- TODO 검색 기능: submit 시 기간(dateStart~dateEnd) · 검색어 · 선택된 키워드(input[name="kw"]:checked)로 목록 필터 -->
+        </div>
+
+        <div class="kw">
+          <button type="button" class="kw-toggle" aria-expanded="false" aria-controls="kwList">KEYWORD <i class="kw-arrow" aria-hidden="true"></i></button>
+          <!-- 접힘: 첫 5개만 / 펼침(.is-open): 전체 -->
+          <ul class="kw-list" id="kwList">
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k01"><span>Keyword 01</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k02"><span>Keyword 02</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k03"><span>Keyword 03</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k04"><span>Keyword 04</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k05"><span>Keyword 05</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k06"><span>Keyword 06</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k07"><span>Keyword 07</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k08"><span>Keyword 08</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k09"><span>Keyword 09</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k10"><span>Keyword 10</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k11"><span>Keyword 11</span></label></li>
+            <li><label class="kw-chip"><input type="checkbox" name="kw" value="k12"><span>Keyword 12</span></label></li>
+          </ul>
+        </div>
+      </form>
+    </section>
+
+    <!-- 03 LIST – 정렬 + 2열 카드 -->
+    <section class="pg-list" aria-label="프로그램 목록">
+      <div class="sp-inner">
+        <div class="pg-sort">
+          <label class="blind" for="pgSort">정렬</label>
+          <select id="pgSort">
+            <option value="recommend">추천 순</option>
+            <option value="popular">인기 순</option>
+            <option value="latest">최신 순</option>
+            <option value="priceAsc">가격 낮은 순</option>
+            <option value="priceDesc">가격 높은 순</option>
+          </select>
+          <!-- TODO 정렬 기능: change 시 카드 순서 변경 (data-price, data-date 등 속성을 카드에 넣어두면 편함) -->
+        </div>
+
+        <ul class="pg-cards" id="pgCards">
+          <li class="pg-card">
+            <a href="#" class="ph pg-thumb">PROGRAM IMAGE</a>
+            <ul class="pg-tags"><li>TAG 01</li><li>TAG 02</li></ul>
+            <h3 class="pg-tit"><a href="#">Program Title 01</a></h3>
+            <p class="pg-desc">프로그램 소개 문구가 들어갑니다. 두 줄까지 노출되고 그 이상은 말줄임(…) 처리됩니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <dl class="pg-period">
+              <div><dt>신청 기간</dt><dd>2026.00.00 - 2026.00.00</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.00.00 - 2026.00.00</dd></div>
+            </dl>
+            <div class="pg-foot">
+              <p class="pg-price"><strong>000,000</strong> KRW ~</p>
+              <div class="pg-btns">
+                <button type="button" class="btn-wish" aria-pressed="false" aria-label="관심 프로그램 담기"><i aria-hidden="true">♡</i></button>
+                <a href="#" class="btn-detail">자세히 보기</a>
+              </div>
+            </div>
+          </li>
+          <li class="pg-card">
+            <a href="#" class="ph pg-thumb">PROGRAM IMAGE</a>
+            <ul class="pg-tags"><li>TAG 01</li><li>TAG 02</li><li>TAG 03</li></ul>
+            <h3 class="pg-tit"><a href="#">Program Title 02 – Long Title Example Ellipsis</a></h3>
+            <p class="pg-desc">프로그램 소개 문구가 들어갑니다. 두 줄까지 노출되고 그 이상은 말줄임(…) 처리됩니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <dl class="pg-period">
+              <div><dt>신청 기간</dt><dd>2026.00.00 - 2026.00.00</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.00.00 - 2026.00.00</dd></div>
+            </dl>
+            <div class="pg-foot">
+              <p class="pg-price"><strong>000,000</strong> KRW ~</p>
+              <div class="pg-btns">
+                <button type="button" class="btn-wish" aria-pressed="false" aria-label="관심 프로그램 담기"><i aria-hidden="true">♡</i></button>
+                <a href="#" class="btn-detail">자세히 보기</a>
+              </div>
+            </div>
+          </li>
+          <li class="pg-card">
+            <a href="#" class="ph pg-thumb">PROGRAM IMAGE</a>
+            <ul class="pg-tags"><li>TAG 01</li><li>TAG 02</li></ul>
+            <h3 class="pg-tit"><a href="#">Program Title 03</a></h3>
+            <p class="pg-desc">프로그램 소개 문구가 들어갑니다. 두 줄까지 노출되고 그 이상은 말줄임(…) 처리됩니다.</p>
+            <dl class="pg-period">
+              <div><dt>신청 기간</dt><dd>2026.00.00 - 2026.00.00</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.00.00 - 2026.00.00</dd></div>
+            </dl>
+            <div class="pg-foot">
+              <p class="pg-price"><strong>000,000</strong> KRW ~</p>
+              <div class="pg-btns">
+                <button type="button" class="btn-wish" aria-pressed="false" aria-label="관심 프로그램 담기"><i aria-hidden="true">♡</i></button>
+                <a href="#" class="btn-detail">자세히 보기</a>
+              </div>
+            </div>
+          </li>
+          <li class="pg-card">
+            <a href="#" class="ph pg-thumb">PROGRAM IMAGE</a>
+            <ul class="pg-tags"><li>TAG 01</li></ul>
+            <h3 class="pg-tit"><a href="#">Program Title 04</a></h3>
+            <p class="pg-desc">프로그램 소개 문구가 들어갑니다. 두 줄까지 노출되고 그 이상은 말줄임(…) 처리됩니다. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+            <dl class="pg-period">
+              <div><dt>신청 기간</dt><dd>2026.00.00 - 2026.00.00</dd></div>
+              <div><dt>진행 기간</dt><dd>2026.00.00 - 2026.00.00</dd></div>
+            </dl>
+            <div class="pg-foot">
+              <p class="pg-price"><strong>000,000</strong> KRW ~</p>
+              <div class="pg-btns">
+                <button type="button" class="btn-wish" aria-pressed="false" aria-label="관심 프로그램 담기"><i aria-hidden="true">♡</i></button>
+                <a href="#" class="btn-detail">자세히 보기</a>
+              </div>
+            </div>
+          </li>
+          <!-- 카드 추가: 위 <li class="pg-card"> 블록을 복사해서 붙여넣기 -->
+        </ul>
+
+        <!-- ==========================================================
+             MORE 버튼 (지금은 4개라 숨김)
+             · 프로그램이 6개를 넘으면 아래 주석을 풀기만 하면 동작함
+             · 처음 6개만 보이고, 누를 때마다 6개씩 추가 → 다 보이면 버튼 사라짐
+             · 개수 변경: js/programs.js 의 PAGE_SIZE
+        ===========================================================
+        <div class="sp-more-wrap">
+          <button type="button" class="sp-more" id="btnMore">MORE</button>
+        </div>
+        -->
+      </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+      <footer class="footer" id="footer">
+        <ul class="family-logos" aria-label="계열 호텔">
+          <li><a href="#" class="ph-box">HOTEL 01</a></li>
+          <li><a href="#" class="ph-box">HOTEL 02</a></li>
+          <li><a href="#" class="ph-box">HOTEL 03</a></li>
+          <li><a href="#" class="ph-box">HOTEL 04</a></li>
+          <li><a href="#" class="ph-box">HOTEL 05</a></li>
+          <li><a href="#" class="ph-box">HOTEL 06</a></li>
+          <li><a href="#" class="ph-box">HOTEL 07</a></li>
+          <li><a href="#" class="ph-box">HOTEL 08</a></li>
+          <li><a href="#" class="ph-box">HOTEL 09</a></li>
+        </ul>
+        <div class="foot-main">
+          <span class="ph-box foot-logo">GROUP<br>LOGO</span>
+          <div class="foot-info">
+            <ul class="policy">
+              <li><a href="#">고객센터</a></li>
+              <li><a href="#">웹사이트 이용약관</a></li>
+              <li><a href="#">이메일무단수집금지</a></li>
+              <li><a href="#">영상정보처리기기운영·관리방침</a></li>
+              <li><a href="#" class="point">개인정보처리방침</a></li>
+            </ul>
+            <address>
+              <p>주소 : 서울특별시 OO구 OO로 000 &nbsp; 대표이사 : 홍길동 &nbsp; T. 00-000-0000 &nbsp; E. info@hotel.com</p>
+              <p>사업자등록번호 000-00-00000 &nbsp; 통신판매신고번호 제0000-서울OO-0000호 &nbsp; 호스팅서비스제공자 : OOOO <a href="#" class="btn-biz">사업자정보확인</a></p>
+              <p class="copy">Copyright © 2026 HOTEL GROUP Co. All rights reserved.</p>
+            </address>
+          </div>
+          <div class="foot-side">
+            <div class="family">
+              <button type="button" class="family-btn" aria-expanded="false" aria-controls="familyList">FAMILY SITES <i aria-hidden="true">⌄</i></button>
+              <ul class="family-list" id="familyList">
+                <li><a href="#">Family Site 01</a></li><li><a href="#">Family Site 02</a></li>
+                <li><a href="#">Family Site 03</a></li><li><a href="#">Family Site 04</a></li>
+                <li><a href="#">Family Site 05</a></li><li><a href="#">Family Site 06</a></li>
+              </ul>
+            </div>
+            <ul class="sns">
+              <li><a href="#" class="sns-ico" aria-label="공식 앱">J</a></li>
+              <li><a href="#" class="sns-ico" aria-label="메신저 채널">Ch</a></li>
+              <li><a href="#" class="sns-ico" aria-label="인스타그램">I</a></li>
+              <li><a href="#" class="sns-ico" aria-label="유튜브">▶</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+<script src="js/ui.js"></script>
+<script src="js/sub.js"></script>
+<script src="js/programs.js"></script>
+</body>
+</html>

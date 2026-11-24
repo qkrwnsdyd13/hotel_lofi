@@ -51,28 +51,17 @@
     });
   });
 
-  /* ---------- RESERVATION 드롭다운 (터치 기기용 클릭 토글) ---------- */
-  const reserv = $('.reserv');
-  const reservBtn = $('.reserv-btn');
-  reservBtn.addEventListener('click', () => {
-    const open = reserv.classList.toggle('open');
-    reservBtn.setAttribute('aria-expanded', String(open));
-  });
-  document.addEventListener('click', (e) => {
-    if (!reserv.contains(e.target)) { reserv.classList.remove('open'); reservBtn.setAttribute('aria-expanded', 'false'); }
-  });
-
   /* ---------- 메인 영상 컨트롤 (UI 상태만 – 실제 video 연결 시 주석 참고) ---------- */
   const btnPlay = $('#btnPlay');
   const btnSound = $('#btnSound');
-  btnPlay.addEventListener('click', () => {
+  if (btnPlay) btnPlay.addEventListener('click', () => {   // 서브페이지엔 영상 없음
     const playing = btnPlay.getAttribute('aria-pressed') === 'true';
     btnPlay.setAttribute('aria-pressed', String(!playing));
     btnPlay.textContent = playing ? '▶' : '❚❚';
     btnPlay.setAttribute('aria-label', playing ? '영상 재생' : '영상 일시정지');
     // video.paused ? video.play() : video.pause();
   });
-  btnSound.addEventListener('click', () => {
+  if (btnSound) btnSound.addEventListener('click', () => {
     const on = btnSound.getAttribute('aria-pressed') === 'true';
     btnSound.setAttribute('aria-pressed', String(!on));
     btnSound.textContent = on ? '🔇' : '🔊';

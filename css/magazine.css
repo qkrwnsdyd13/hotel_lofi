@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* ==========================================================
+   MAGAZINE – Low-fidelity Wireframe (style.css → sub.css 다음에 로드)
+   인트로 · MORE 버튼은 sub.css
+========================================================== */
+.page-magazine .sp-intro { padding-bottom: 80px; }
+.mg-list { padding-bottom: 160px; }
+
+/* 카테고리 필터 – 글자 탭 + 세로 구분선 */
+.mg-filter { display: flex; flex-wrap: wrap; align-items: center; row-gap: 12px; margin-bottom: 44px; }
+.mg-filter li { display: flex; align-items: center; }
+.mg-filter li + li::before { content: ""; width: 1px; height: 14px; background: #bbb; margin: 0 20px; }
+.mg-tab { font-size: 20px; letter-spacing: .02em; color: #bbb; transition: color .2s; }
+.mg-tab:hover { color: #666; }
+.mg-tab[aria-pressed="true"] { color: #111; font-weight: 600; }
+
+/* 3열 그리드 */
+.mg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px 59px; }
+.mg-item[hidden] { display: none; }
+.mg-link { position: relative; display: block; overflow: hidden; }
+.mg-img { width: 100%; aspect-ratio: 427 / 296; transition: transform .4s; }
+/* 마우스 올리면 제목 표시 */
+.mg-cap {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  background: rgba(0, 0, 0, .55); color: #fff; text-align: center; padding: 20px;
+  opacity: 0; transition: opacity .3s;
+}
+.mg-cap strong { font-size: 18px; font-weight: 700; letter-spacing: .02em; }
+.mg-cap em { font-style: normal; font-size: 12px; letter-spacing: .1em; color: #ddd; }
+.mg-link:hover .mg-cap, .mg-link:focus-visible .mg-cap { opacity: 1; }
+.mg-link:hover .mg-img { transform: scale(1.04); }
+.mg-empty { padding: 80px 0; text-align: center; color: #888; }
+
+/* RESPONSIVE */
+@media (max-width: 1280px) {
+  .mg-grid { gap: 40px 32px; }
+  .mg-tab { font-size: 17px; }
+  .mg-filter li + li::before { margin: 0 14px; }
+}
+@media (max-width: 1024px) {
+  .page-magazine .sp-intro { padding-bottom: 40px; }
+  .mg-list { padding-bottom: 80px; }
+  /* 모바일 필터: 가로 스크롤 한 줄 */
+  .mg-filter { flex-wrap: nowrap; overflow-x: auto; margin: 0 -24px 28px; padding: 0 24px 6px; scrollbar-width: none; }
+  .mg-filter::-webkit-scrollbar { display: none; }
+  .mg-filter li { flex-shrink: 0; }
+  .mg-tab { font-size: 15px; white-space: nowrap; }
+  .mg-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .mg-cap { opacity: 1; inset: auto 0 0 0; background: linear-gradient(transparent, rgba(0,0,0,.6)); padding: 24px 10px 10px; align-items: flex-start; gap: 2px; }
+  .mg-cap strong { font-size: 13px; }
+  .mg-cap em { display: none; }
+}

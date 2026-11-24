@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* ==========================================================
+   PARTNERS – Low-fidelity Wireframe (style.css → sub.css 다음에 로드)
+   섹션 헤드(.ab-head/.ab-tit/.ab-sub/.ab-txt)는 sub.css
+========================================================== */
+
+/* 01 INTRO – 가운데 정렬 */
+.pt-intro { padding: 110px 24px 0; text-align: center; }
+.pt-page-tit { font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 1.1; letter-spacing: .02em; color: #111; }
+.pt-page-txt { margin-top: 36px; font-size: 17px; line-height: 1.9; color: #333; }
+
+/* 02 STATEMENT */
+.pt-statement { padding-top: 110px; }
+.pt-statement .ab-txt { margin-top: 56px; }
+
+/* 03 PRINCIPLES – 3열 카드 */
+.pt-principles { padding-bottom: 160px; }
+.pt-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  width: calc(100% - 500px); max-width: var(--inner); margin: 64px auto 0;
+}
+.pt-card { display: flex; flex-direction: column; background: var(--panel); text-align: center; }
+.pc-top { flex: 1; padding: 56px 40px 48px; }
+.pc-tit { font-size: 19px; font-weight: 700; letter-spacing: .02em; color: #111; margin-bottom: 26px; }
+.pc-top p, .pc-bottom p { font-size: 15px; line-height: 2; color: #333; }
+.pc-img { aspect-ratio: 460 / 300; border-left: 0; border-right: 0; }
+.pc-bottom { padding: 40px 40px 48px; }
+.pc-sub { font-family: var(--serif); font-weight: 700; font-size: 22px; color: #111; margin-bottom: 14px; }
+
+/* RESPONSIVE */
+@media (max-width: 1600px) {
+  .pt-cards { width: calc(100% - 240px); }
+  .pc-top, .pc-bottom { padding-left: 28px; padding-right: 28px; }
+}
+@media (max-width: 1024px) {
+  .pt-intro { padding-top: 64px; }
+  .pt-page-tit { font-size: 40px; }
+  .pt-page-txt { margin-top: 20px; font-size: 15px; }
+  .pt-page-txt br { display: none; }
+  .pt-statement { padding-top: 72px; }
+  .pt-statement .ab-txt { margin-top: 28px; }
+  .pt-principles { padding-bottom: 80px; }
+  .pt-cards { grid-template-columns: 1fr; width: calc(100% - 48px); margin-top: 36px; gap: 20px; }
+  .pc-top { padding: 36px 24px 32px; }
+  .pc-bottom { padding: 28px 24px 32px; }
+  .pc-tit { font-size: 17px; margin-bottom: 16px; }
+  .pc-top p, .pc-bottom p { font-size: 14px; line-height: 1.9; }
+}
+@media (max-width: 640px) {
+  .pt-page-tit { font-size: 32px; }
+}

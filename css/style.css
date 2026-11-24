@@ -103,15 +103,9 @@ section[tabindex="-1"]:focus { outline: 0; } /* 앵커 이동 시 섹션 전체 
 .util-right li + li::before { content: "|"; margin: 0 14px; color: #666; font-size: 10px; }
 .gnb-bar { height: var(--gnb-h); display: flex; align-items: center; padding: 0 50px; gap: 60px; border-bottom: 1px solid #eee; }
 .gnb { display: flex; align-items: center; gap: 0; flex: 1; }
-.reserv { position: relative; }
 .reserv-btn { font-size: 15px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; height: var(--gnb-h); }
 .ico-grid { width: 14px; height: 10px; background:
   radial-gradient(circle, #222 1.6px, transparent 1.7px) 0 0 / 5px 5px; }
-.reserv-list { position: absolute; left: 0; top: calc(100% - 10px); min-width: 180px; background: #fff; border: 1px solid #ddd; padding: 10px 0;
-  opacity: 0; visibility: hidden; transform: translateY(-6px); transition: .2s; }
-.reserv:hover .reserv-list, .reserv:focus-within .reserv-list, .reserv.open .reserv-list { opacity: 1; visibility: visible; transform: none; }
-.reserv-list a { display: block; padding: 8px 20px; font-size: 13px; font-weight: 600; }
-.reserv-list a:hover { background: #f3f3f3; }
 .gnb-sep { width: 1px; height: 14px; background: #222; margin: 0 54px; }
 .gnb-list { display: flex; gap: 40px; }
 .gnb-list a { font-size: 15px; font-weight: 700; white-space: nowrap; position: relative; }

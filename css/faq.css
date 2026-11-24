@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* ==========================================================
+   FAQ – Low-fidelity Wireframe (style.css → sub.css 다음에 로드)
+   인트로 · 검색 띠(.sp-search/.search-input/.btn-search)는 sub.css
+========================================================== */
+
+/* ---------- 카테고리 드롭다운 ---------- */
+.fq-select { position: relative; width: 270px; flex-shrink: 0; margin-right: 14px; }
+.fq-sel-btn {
+  width: 100%; height: 50px; display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid #222; font-size: 17px; text-align: left; padding: 0 2px;
+}
+.fq-sel-arrow { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #222; transition: transform .2s; }
+.fq-sel-btn[aria-expanded="true"] .fq-sel-arrow { transform: rotate(180deg); }
+.fq-sel-list {
+  position: absolute; left: 0; right: 0; top: 100%; z-index: 20;
+  max-height: 200px; overflow-y: auto; background: #fff; border: 1px solid #222; border-top: 0;
+}
+.fq-sel-list[hidden] { display: none; }
+.fq-sel-list li { padding: 0 20px; height: 50px; line-height: 50px; font-size: 16px; cursor: pointer; }
+.fq-sel-list li:hover, .fq-sel-list li.is-active { background: #f3f3f3; }
+.fq-sel-list li[aria-selected="true"] { font-weight: 700; }
+
+/* ---------- 탭 ---------- */
+.fq-list { padding: 120px 0 140px; }
+.fq-tabs { display: grid; grid-template-columns: repeat(7, 1fr); }
+.fq-tabs li + li { margin-left: -1px; }
+.fq-tab {
+  width: 100%; height: 60px; font-size: 18px; color: #999;
+  border: 1px solid #ccc; border-bottom-color: #222; background: #fff; position: relative;
+}
+.fq-tab:hover { color: #444; }
+.fq-tab[aria-pressed="true"] { color: #111; border-color: #222; border-bottom-color: transparent; z-index: 1; }
+
+/* ---------- 아코디언 ---------- */
+.fq-items { margin-top: 30px; }
+.fq-item { border-bottom: 1px solid #ccc; }
+.fq-item[hidden] { display: none; }
+.fq-q { font-weight: 400; }   /* h3 기본 굵기 제거 */
+.fq-q button {
+  width: 100%; min-height: 72px; display: flex; align-items: center; gap: 24px; padding: 16px 30px 16px 0; text-align: left;
+}
+.fq-cat { width: 200px; flex-shrink: 0; text-align: center; font-size: 17px; color: #333; }
+.fq-tit { flex: 1; font-size: 17px; color: #222; line-height: 1.6; }
+.fq-q button:hover .fq-tit { text-decoration: underline; text-underline-offset: 4px; }
+.fq-arrow { width: 18px; height: 18px; flex-shrink: 0; border-right: 1.5px solid #222; border-bottom: 1.5px solid #222; transform: translateY(-5px) rotate(45deg); transition: transform .25s; }
+.fq-q button[aria-expanded="true"] .fq-arrow { transform: translateY(5px) rotate(-135deg); }
+.fq-a { background: var(--search-bg); }
+.fq-a-in { padding: 32px 60px 36px 224px; font-size: 16px; line-height: 1.9; color: #444; }
+.fq-a-in p + p { margin-top: 16px; }
+.fq-empty { padding: 80px 0; text-align: center; color: #888; border-bottom: 1px solid #ccc; }
+
+/* ---------- 페이지 번호 ---------- */
+.fq-paging ol { display: flex; justify-content: center; gap: 13px; margin-top: 60px; }
+.fq-paging ol:empty { display: none; }
+.fq-page { width: 50px; height: 50px; border: 1px solid #ddd; font-size: 17px; color: #888; }
+.fq-page:hover { color: #222; }
+.fq-page[aria-current="page"] { border-color: #222; color: #111; }
+
+/* RESPONSIVE */
+@media (max-width: 1280px) {
+  .fq-tab { font-size: 15px; }
+  .fq-cat { width: 140px; }
+  .fq-a-in { padding-left: 164px; }
+}
+@media (max-width: 1024px) {
+  .fq-select { width: 100%; margin-right: 0; }
+  .fq-sel-btn { font-size: 15px; }
+  .fq-list { padding: 48px 0 80px; }
+  /* 탭: 가로 스크롤 */
+  .fq-tabs { display: flex; overflow-x: auto; margin: 0 -24px; padding: 0 24px; scrollbar-width: none; }
+  .fq-tabs::-webkit-scrollbar { display: none; }
+  .fq-tabs li { flex: 0 0 auto; }
+  .fq-tab { width: auto; height: 48px; padding: 0 18px; font-size: 14px; white-space: nowrap; }
+  .fq-items { margin-top: 12px; }
+  .fq-q button { flex-wrap: wrap; gap: 6px 12px; padding: 18px 36px 18px 0; position: relative; }
+  .fq-cat { width: 100%; text-align: left; font-size: 13px; color: #888; }
+  .fq-tit { font-size: 15px; }
+  .fq-arrow { position: absolute; right: 6px; top: 50%; width: 12px; height: 12px; margin-top: -6px; }
+  .fq-a-in { padding: 22px 20px 24px; font-size: 14px; }
+  .fq-paging ol { margin-top: 40px; gap: 8px; }
+  .fq-page { width: 42px; height: 42px; font-size: 15px; }
+}

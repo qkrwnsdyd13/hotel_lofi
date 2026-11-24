@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko" class="is-content">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAGAZINE – Low-fidelity Wireframe</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/sub.css">
+  <link rel="stylesheet" href="css/magazine.css">
+</head>
+<body>
+
+<a href="#content" class="skip">본문 바로가기</a>
+
+<!-- ============================================================
+     HEADER
+     - data-mode="default"    : 메인 영상 위 (햄버거 · 상품찾기 · KR, 투명)
+     - data-mode="default" : 그 외 섹션 (상단 유틸바 + GNB, 흰 배경)
+============================================================ -->
+<header class="header" id="header" data-mode="default">
+
+  <!-- 히어로용 미니 헤더 -->
+  <div class="hd-hero">
+    <button type="button" class="btn-ham" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#" class="hd-link">상품찾기 <i class="ico-search" aria-hidden="true"></i></a>
+    <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+  </div>
+
+  <!-- 기본 헤더 -->
+  <div class="hd-full">
+    <div class="util-bar">
+      <div class="util-left">
+        <a href="#" class="group-link">HOTEL GROUP</a>
+        <a href="#" class="hd-link">호텔찾기 <i class="ico-search" aria-hidden="true"></i></a>
+        <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+      </div>
+      <ul class="util-right">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">예약확인</a></li>
+        <!-- <li><a href="#">멤버십</a></li> -->
+      </ul>
+    </div>
+    <div class="gnb-bar">
+      <h1 class="logo"><a href="index.html"><span class="ph-box">LOGO</span></a></h1>
+      <nav class="gnb" aria-label="주메뉴">
+        <a href="reservation.html" class="reserv-btn">RESERVATION <i class="ico-grid" aria-hidden="true"></i></a>
+        <span class="gnb-sep" aria-hidden="true"></span>
+        <ul class="gnb-list">
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="programs.html">PROGRAMS</a></li>
+          <li><a href="partners.html">PARTNERS</a></li>
+          <li><a href="magazine.html" class="on" aria-current="page">MAGAZINE</a></li>
+          <li><a href="community.html">COMMUNITY</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="btn-ham dark" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- 서브바 (스크롤 시 GNB 줄 대신 노출) -->
+    <div class="sub-bar">
+      <p class="sub-name"><a href="index.html">HOTEL NAME</a></p>
+      <a href="reservation.html" class="sub-reserv">RESERVATION</a>
+      <nav class="crumb" aria-label="현재 위치">
+        <ol>
+          <li><a href="index.html">HOME</a></li>
+          <li class="dd">
+            <button type="button" class="dd-btn" aria-expanded="false">MAGAZINE <i class="caret" aria-hidden="true"></i></button>
+            <ul class="dd-list">
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="programs.html">PROGRAM</a></li>
+              <li><a href="partners.html">PARTNERS</a></li>
+              <li><a href="magazine.html" aria-current="true">MAGAZINE</a></li>
+              <li><a href="#">COMMUNITY</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="reservation.html">RESERVATION</a></li>
+            </ul>
+          </li>
+          <li class="dd">
+            <button type="button" class="dd-btn" aria-expanded="false">MAGAZINE <i class="caret" aria-hidden="true"></i></button>
+            <ul class="dd-list">
+              <li><a href="magazine.html" aria-current="page">MAGAZINE</a></li>
+              <li><a href="#">PACKAGE</a></li>
+              <li><a href="#">EVENT</a></li>
+            </ul>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     전체메뉴 (슬라이드 다운 / 슬라이드 업)
+============================================================ -->
+<div class="all-menu" id="allMenu" aria-hidden="true" inert data-fp-ignore>
+  <div class="am-head">
+    <span class="ph-box emblem">EMBLEM</span>
+    <button type="button" class="am-close" aria-label="전체메뉴 닫기"><span></span><span></span></button>
+  </div>
+
+  <nav class="am-body" aria-label="전체메뉴">
+    <div class="am-col">
+      <button type="button" class="am-tit">ABOUT</button>
+      <ul class="am-list">
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="#">OUR PROMISE</a></li>
+        <li><a href="#">LOCATION &amp; TRANSPORTATION</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">PROGRAM</button>
+      <ul class="am-list">
+        <li><a href="programs.html">한눈에 보기</a></li>
+        <li><a href="#">ROOM</a>
+          <ul class="am-sub"><li><a href="#">Room Type 01</a></li><li><a href="#">Room Type 02</a></li><li><a href="#">Room Type 03</a></li><li><a href="#">Room Type 04</a></li></ul>
+        </li>
+        <li><a href="#">SUITE</a>
+          <ul class="am-sub"><li><a href="#">Suite Type 01</a></li><li><a href="#">Suite Type 02</a></li><li><a href="#">Suite Type 03</a></li></ul>
+        </li>
+        <li><a href="#">SPECIALTY SUITE</a>
+          <ul class="am-sub"><li><a href="#">Specialty 01</a></li><li><a href="#">Specialty 02</a></li></ul>
+        </li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">PARTNERS</button>
+      <ul class="am-list">
+        <li><a href="partners.html">한눈에 보기</a></li>
+        <li><a href="#">Restaurant 01</a></li>
+        <li><a href="#">Lounge &amp; Bar</a></li>
+        <li><a href="#">Restaurant 02</a></li>
+        <li><a href="#">Restaurant 03</a></li>
+        <li><a href="#">Deli</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">MAGAZINE</button>
+      <ul class="am-list">
+        <li><a href="magazine.html" aria-current="page">한눈에 보기</a></li>
+        <li><a href="#">PACKAGE</a></li>
+        <li><a href="#">EVENT</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">COMMUNITY</button>
+      <ul class="am-list">
+        <li><a href="index.html#meeting">한눈에 보기</a></li>
+        <li><a href="#">MEETING</a>
+          <ul class="am-sub"><li><a href="#">Signature Event</a></li></ul>
+        </li>
+        <li><a href="#">WEDDING</a>
+          <ul class="am-sub"><li><a href="#">Signature Wedding</a></li></ul>
+        </li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">FAQ</button>
+      <ul class="am-list">
+        <li><a href="faq.html">한눈에 보기</a></li>
+        <li><a href="#">FITNESS</a></li>
+        <li><a href="#">POOL</a></li>
+        <li><a href="#">SAUNA</a></li>
+        <li><a href="#">PILATES</a></li>
+        <li><a href="#">BUSINESS CENTER</a></li>
+      </ul>
+    </div>
+    <div class="am-col">
+      <button type="button" class="am-tit">RESERVATION</button>
+      <ul class="am-list">
+        <li><a href="faq.html">한눈에 보기</a></li>
+        <li><a href="#">ART COLLECTION</a></li>
+        <li><a href="#">ART TOUR</a></li>
+      </ul>
+      <p class="am-tit sub">LOUNGE</p>
+      <ul class="am-thumbs">
+        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 01</em></a></li>
+        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 02</em></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!-- 본문 (일반 스크롤 – 메인 영상 없음) -->
+<main id="content" class="page-magazine">
+
+    <!-- 01 PAGE INTRO -->
+    <section class="sp-intro">
+      <div class="sp-inner">
+        <h2 class="sp-page-tit">MAGAZINE</h2>
+        <p class="sp-page-txt">페이지 소개 한 줄 – 매거진을 만나보세요.</p>
+      </div>
+    </section>
+
+    <!-- 02 LIST – 카테고리 필터 + 3열 그리드 (12개씩, MORE로 12개 추가) -->
+    <section class="mg-list" aria-label="매거진 목록">
+      <div class="sp-inner">
+        <ul class="mg-filter" aria-label="카테고리">
+          <li><button type="button" class="mg-tab" data-cat="all" aria-pressed="true">ALL</button></li>
+          <li><button type="button" class="mg-tab" data-cat="c01" aria-pressed="false">CATEGORY 01</button></li>
+          <li><button type="button" class="mg-tab" data-cat="c02" aria-pressed="false">CATEGORY 02</button></li>
+          <li><button type="button" class="mg-tab" data-cat="c03" aria-pressed="false">CATEGORY 03</button></li>
+          <li><button type="button" class="mg-tab" data-cat="c04" aria-pressed="false">CATEGORY 04</button></li>
+          <li><button type="button" class="mg-tab" data-cat="c05" aria-pressed="false">CATEGORY 05</button></li>
+          <li><button type="button" class="mg-tab" data-cat="c06" aria-pressed="false">CATEGORY 06</button></li>
+          <li><button type="button" class="mg-tab" data-cat="c07" aria-pressed="false">CATEGORY 07</button></li>
+          <li><button type="button" class="mg-tab" data-cat="c08" aria-pressed="false">CATEGORY 08</button></li>
+        </ul>
+
+        <!-- 카드 추가: <li class="mg-item" data-cat="카테고리값"> 블록 복사
+             · data-cat 은 위 필터 버튼의 data-cat 과 맞추기
+             · 처음 12개만 보이고 MORE 누를 때마다 12개씩 (js/magazine.js PAGE_SIZE) -->
+        <ul class="mg-grid" id="mgGrid">
+          <li class="mg-item" data-cat="c01">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 01</span>
+              <span class="mg-cap"><strong>Article Title 01</strong><em>CATEGORY 01</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c02">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 02</span>
+              <span class="mg-cap"><strong>Article Title 02</strong><em>CATEGORY 02</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c03">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 03</span>
+              <span class="mg-cap"><strong>Article Title 03</strong><em>CATEGORY 03</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c04">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 04</span>
+              <span class="mg-cap"><strong>Article Title 04</strong><em>CATEGORY 04</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c05">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 05</span>
+              <span class="mg-cap"><strong>Article Title 05</strong><em>CATEGORY 05</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c06">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 06</span>
+              <span class="mg-cap"><strong>Article Title 06</strong><em>CATEGORY 06</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c07">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 07</span>
+              <span class="mg-cap"><strong>Article Title 07</strong><em>CATEGORY 07</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c08">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 08</span>
+              <span class="mg-cap"><strong>Article Title 08</strong><em>CATEGORY 08</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c01">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 09</span>
+              <span class="mg-cap"><strong>Article Title 09</strong><em>CATEGORY 01</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c02">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 10</span>
+              <span class="mg-cap"><strong>Article Title 10</strong><em>CATEGORY 02</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c03">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 11</span>
+              <span class="mg-cap"><strong>Article Title 11</strong><em>CATEGORY 03</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c04">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 12</span>
+              <span class="mg-cap"><strong>Article Title 12</strong><em>CATEGORY 04</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c05">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 13</span>
+              <span class="mg-cap"><strong>Article Title 13</strong><em>CATEGORY 05</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c06">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 14</span>
+              <span class="mg-cap"><strong>Article Title 14</strong><em>CATEGORY 06</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c07">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 15</span>
+              <span class="mg-cap"><strong>Article Title 15</strong><em>CATEGORY 07</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c08">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 16</span>
+              <span class="mg-cap"><strong>Article Title 16</strong><em>CATEGORY 08</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c01">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 17</span>
+              <span class="mg-cap"><strong>Article Title 17</strong><em>CATEGORY 01</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c02">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 18</span>
+              <span class="mg-cap"><strong>Article Title 18</strong><em>CATEGORY 02</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c03">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 19</span>
+              <span class="mg-cap"><strong>Article Title 19</strong><em>CATEGORY 03</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c04">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 20</span>
+              <span class="mg-cap"><strong>Article Title 20</strong><em>CATEGORY 04</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c05">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 21</span>
+              <span class="mg-cap"><strong>Article Title 21</strong><em>CATEGORY 05</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c06">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 22</span>
+              <span class="mg-cap"><strong>Article Title 22</strong><em>CATEGORY 06</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c07">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 23</span>
+              <span class="mg-cap"><strong>Article Title 23</strong><em>CATEGORY 07</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c08">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 24</span>
+              <span class="mg-cap"><strong>Article Title 24</strong><em>CATEGORY 08</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c01">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 25</span>
+              <span class="mg-cap"><strong>Article Title 25</strong><em>CATEGORY 01</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c02">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 26</span>
+              <span class="mg-cap"><strong>Article Title 26</strong><em>CATEGORY 02</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c03">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 27</span>
+              <span class="mg-cap"><strong>Article Title 27</strong><em>CATEGORY 03</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c04">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 28</span>
+              <span class="mg-cap"><strong>Article Title 28</strong><em>CATEGORY 04</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c05">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 29</span>
+              <span class="mg-cap"><strong>Article Title 29</strong><em>CATEGORY 05</em></span>
+            </a>
+          </li>
+          <li class="mg-item" data-cat="c06">
+            <a href="#" class="mg-link">
+              <span class="ph mg-img">IMAGE 30</span>
+              <span class="mg-cap"><strong>Article Title 30</strong><em>CATEGORY 06</em></span>
+            </a>
+          </li>
+        </ul>
+        <p class="mg-empty" id="mgEmpty" hidden>등록된 게시물이 없습니다.</p>
+
+        <div class="sp-more-wrap" id="mgMoreWrap">
+          <button type="button" class="sp-more" id="mgMore">MORE</button>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+      <footer class="footer" id="footer">
+        <ul class="family-logos" aria-label="계열 호텔">
+          <li><a href="#" class="ph-box">HOTEL 01</a></li>
+          <li><a href="#" class="ph-box">HOTEL 02</a></li>
+          <li><a href="#" class="ph-box">HOTEL 03</a></li>
+          <li><a href="#" class="ph-box">HOTEL 04</a></li>
+          <li><a href="#" class="ph-box">HOTEL 05</a></li>
+          <li><a href="#" class="ph-box">HOTEL 06</a></li>
+          <li><a href="#" class="ph-box">HOTEL 07</a></li>
+          <li><a href="#" class="ph-box">HOTEL 08</a></li>
+          <li><a href="#" class="ph-box">HOTEL 09</a></li>
+        </ul>
+        <div class="foot-main">
+          <span class="ph-box foot-logo">GROUP<br>LOGO</span>
+          <div class="foot-info">
+            <ul class="policy">
+              <li><a href="#">고객센터</a></li>
+              <li><a href="#">웹사이트 이용약관</a></li>
+              <li><a href="#">이메일무단수집금지</a></li>
+              <li><a href="#">영상정보처리기기운영·관리방침</a></li>
+              <li><a href="#" class="point">개인정보처리방침</a></li>
+            </ul>
+            <address>
+              <p>주소 : 서울특별시 OO구 OO로 000 &nbsp; 대표이사 : 홍길동 &nbsp; T. 00-000-0000 &nbsp; E. info@hotel.com</p>
+              <p>사업자등록번호 000-00-00000 &nbsp; 통신판매신고번호 제0000-서울OO-0000호 &nbsp; 호스팅서비스제공자 : OOOO <a href="#" class="btn-biz">사업자정보확인</a></p>
+              <p class="copy">Copyright © 2026 HOTEL GROUP Co. All rights reserved.</p>
+            </address>
+          </div>
+          <div class="foot-side">
+            <div class="family">
+              <button type="button" class="family-btn" aria-expanded="false" aria-controls="familyList">FAMILY SITES <i aria-hidden="true">⌄</i></button>
+              <ul class="family-list" id="familyList">
+                <li><a href="#">Family Site 01</a></li><li><a href="#">Family Site 02</a></li>
+                <li><a href="#">Family Site 03</a></li><li><a href="#">Family Site 04</a></li>
+                <li><a href="#">Family Site 05</a></li><li><a href="#">Family Site 06</a></li>
+              </ul>
+            </div>
+            <ul class="sns">
+              <li><a href="#" class="sns-ico" aria-label="공식 앱">J</a></li>
+              <li><a href="#" class="sns-ico" aria-label="메신저 채널">Ch</a></li>
+              <li><a href="#" class="sns-ico" aria-label="인스타그램">I</a></li>
+              <li><a href="#" class="sns-ico" aria-label="유튜브">▶</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+<script src="js/ui.js"></script>
+<script src="js/sub.js"></script>
+<script src="js/magazine.js"></script>
+</body>
+</html>

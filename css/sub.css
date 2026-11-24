@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* ==========================================================
+   서브페이지 공통 (style.css 다음에 로드)
+   about · programs · partners · magazine · faq
+   · 헤더 서브바 : 스크롤 시 GNB 줄 → 페이지명 · RESERVATION · 브레드크럼 (js/sub.js)
+   · 왼쪽 정렬 인트로 / 회색 검색 띠 / 가운데 정렬 섹션 헤드 / MORE 버튼
+========================================================== */
+:root {
+  --gold: #a8916a;
+  --inner: 1400px;
+  --search-bg: #f6f6f6;
+  --panel: #f3f2f0;          /* 연한 베이지 패널 */
+}
+.blind { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ==========================================================
+   HEADER – 서브바 (스크롤 시 GNB 줄 대신)
+========================================================== */
+.hd-full { position: relative; }
+.gnb-bar, .sub-bar { transition: opacity .3s, visibility 0s linear .3s; }
+.sub-bar {
+  position: absolute; left: 0; right: 0; top: var(--util-h); height: var(--gnb-h);
+  display: flex; align-items: center; gap: 90px; padding: 0 50px;
+  background: #fff; border-bottom: 1px solid #eee;
+  opacity: 0; visibility: hidden;
+}
+.header.is-sub .gnb-bar { opacity: 0; visibility: hidden; }
+.header.is-sub .sub-bar { opacity: 1; visibility: visible; transition: opacity .3s, visibility 0s; }
+
+.sub-name { font-size: 15px; font-weight: 700; letter-spacing: .02em; min-width: 120px; }
+.sub-reserv { font-size: 15px; }
+.crumb { margin-left: auto; }
+.crumb ol { display: flex; align-items: center; }
+.crumb ol > li + li::before { content: ""; display: inline-block; width: 1px; height: 12px; background: #ccc; margin: 0 20px; vertical-align: middle; }
+.crumb ol > li > a, .dd-btn { font-size: 15px; }
+
+/* 드롭다운 */
+.dd { position: relative; display: inline-block; }
+.dd-btn { display: inline-flex; align-items: center; gap: 10px; height: var(--gnb-h); }
+.caret { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; transition: transform .2s; }
+.dd-list {
+  position: absolute; left: -16px; top: calc(100% - 20px); min-width: 200px; background: #fff; border: 1px solid #ddd; padding: 10px 0;
+  opacity: 0; visibility: hidden; transform: translateY(-6px); transition: .2s;
+}
+.crumb .dd-list { left: auto; right: -16px; }
+.dd:hover .dd-list, .dd:focus-within .dd-list, .dd.open .dd-list { opacity: 1; visibility: visible; transform: none; }
+.dd:hover .caret, .dd.open .caret { transform: rotate(180deg); }
+.dd-list a { display: block; padding: 8px 20px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.dd-list a:hover { background: #f3f3f3; }
+.dd-list a[aria-current] { color: var(--gold); }
+
+/* ==========================================================
+   왼쪽 정렬 인트로 (programs · magazine · faq)
+========================================================== */
+.sp-inner { width: calc(100% - 500px); max-width: var(--inner); margin: 0 auto; }
+.sp-intro { padding: 110px 0 82px; }
+.sp-page-tit { font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 1.1; letter-spacing: .02em; color: #111; }
+.sp-page-txt { margin-top: 22px; font-size: 19px; line-height: 1.9; color: #222; }
+
+/* ==========================================================
+   회색 검색 띠 (programs · faq)
+========================================================== */
+.sp-search { background: var(--search-bg); padding: 48px 0; }
+.search-row { display: flex; align-items: flex-end; gap: 28px; }
+.search-input {
+  flex: 1; min-width: 0; height: 50px; padding: 0 2px; border: 0; border-bottom: 1px solid #222; background: transparent;
+  font: inherit; font-size: 17px; color: #222;
+}
+.search-input::placeholder { color: #aaa; }
+.search-input:focus-visible { outline: 0; box-shadow: 0 1px 0 #222; }  /* 포커스: 밑줄 두껍게 */
+.search-input::-webkit-search-cancel-button { display: none; }
+.btn-search { flex-shrink: 0; width: 162px; height: 50px; margin-left: 12px; border: 1px solid #222; font-size: 16px; transition: background .2s, color .2s; }
+.btn-search:hover { background: #222; color: #fff; }
+
+/* ==========================================================
+   가운데 정렬 섹션 헤드 (about · partners)
+========================================================== */
+.ab-sec { padding-top: 140px; }
+.ab-head { max-width: var(--inner); margin: 0 auto; padding: 0 24px; text-align: center; }
+.ab-tit { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.2; color: #111; }
+.ab-sub { margin-top: 22px; font-size: 16px; font-weight: 600; letter-spacing: .08em; color: var(--gold); }
+.ab-txt { margin-top: 44px; font-size: 17px; line-height: 1.95; color: #333; }
+
+/* ==========================================================
+   MORE 버튼 (programs · magazine)
+========================================================== */
+.sp-more-wrap { text-align: center; margin-top: 140px; }
+.sp-more-wrap[hidden] { display: none; }
+.sp-more { font-size: 18px; letter-spacing: .03em; padding-bottom: 4px; border-bottom: 1.5px solid #222; }
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+@media (max-width: 1600px) {
+  .sub-bar { gap: 50px; }
+  .sp-inner { width: calc(100% - 240px); }
+}
+@media (max-width: 1280px) {
+  .search-row { flex-wrap: wrap; }
+  .btn-search { margin-left: 0; }
+}
+@media (max-width: 1024px) {
+  /* 모바일: 서브바 없이 기본 헤더(로고 + 햄버거) 유지 */
+  .sub-bar { display: none; }
+  .header.is-sub .gnb-bar { opacity: 1; visibility: visible; }
+
+  .sp-inner { width: calc(100% - 48px); }
+  .sp-intro { padding: 64px 0 48px; }
+  .sp-page-tit { font-size: 40px; }
+  .sp-page-txt { font-size: 15px; }
+  .sp-page-txt br { display: none; }
+
+  .sp-search { padding: 32px 0; }
+  .search-row { gap: 16px; }
+  .search-input { flex: 1 1 100%; font-size: 15px; }
+  .btn-search { width: 100%; }
+
+  .ab-sec { padding-top: 80px; }
+  .ab-tit { font-size: 30px; }
+  .ab-sub { font-size: 14px; margin-top: 14px; }
+  .ab-txt { margin-top: 24px; font-size: 15px; }
+  .ab-txt br { display: none; }
+
+  .sp-more-wrap { margin-top: 64px; }
+}
+@media (max-width: 640px) {
+  .sp-page-tit { font-size: 32px; }
+  .ab-tit { font-size: 26px; }
+}
