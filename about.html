@@ -15,12 +15,13 @@
 <!-- ============================================================
      HEADER
      - data-mode="default"    : 메인 영상 위 (햄버거 · 상품찾기 · KR, 투명)
-     - data-mode="default" : 그 외 섹션 (상단 유틸바 + GNB, 흰 배경)
+     - data-mode="default" : 그 외 섹션 (GNB + KR · 프로필, 흰 배경)
 ============================================================ -->
 <header class="header" id="header" data-mode="default">
 
   <!-- 히어로용 미니 헤더 -->
   <div class="hd-hero">
+    <a href="index.html" class="hd-logo"><span class="ph-box">LOGO</span></a>
     <button type="button" class="btn-ham" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
       <span></span><span></span><span></span>
     </button>
@@ -30,19 +31,6 @@
 
   <!-- 기본 헤더 -->
   <div class="hd-full">
-    <div class="util-bar">
-      <div class="util-left">
-        <a href="#" class="group-link">HOTEL GROUP</a>
-        <a href="#" class="hd-link">호텔찾기 <i class="ico-search" aria-hidden="true"></i></a>
-        <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
-      </div>
-      <ul class="util-right">
-        <li><a href="#">로그인</a></li>
-        <li><a href="#">회원가입</a></li>
-        <li><a href="#">예약확인</a></li>
-        <!-- <li><a href="#">멤버십</a></li> -->
-      </ul>
-    </div>
     <div class="gnb-bar">
       <h1 class="logo"><a href="index.html"><span class="ph-box">LOGO</span></a></h1>
       <nav class="gnb" aria-label="주메뉴">
@@ -57,6 +45,18 @@
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </nav>
+      <div class="gnb-side">
+        <button type="button" class="hd-lang">KR <i aria-hidden="true">▸</i></button>
+        <div class="profile">
+          <button type="button" class="profile-btn" aria-expanded="false" aria-controls="profileMenu" aria-label="회원 메뉴">
+            <span class="profile-img" aria-hidden="true"></span>
+          </button>
+          <ul class="profile-list" id="profileMenu">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+          </ul>
+        </div>
+      </div>
       <button type="button" class="btn-ham dark" aria-label="전체메뉴 열기" aria-expanded="false" aria-controls="allMenu">
         <span></span><span></span><span></span>
       </button>
@@ -107,85 +107,18 @@
   </div>
 
   <nav class="am-body" aria-label="전체메뉴">
-    <div class="am-col">
-      <button type="button" class="am-tit">ABOUT</button>
-      <ul class="am-list">
-        <li><a href="about.html" aria-current="page">ABOUT US</a></li>
-        <li><a href="#">OUR PROMISE</a></li>
-        <li><a href="#">LOCATION &amp; TRANSPORTATION</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="#">CONTACT US</a></li>
-      </ul>
-    </div>
-    <div class="am-col">
-      <button type="button" class="am-tit">PROGRAM</button>
-      <ul class="am-list">
-        <li><a href="programs.html">한눈에 보기</a></li>
-        <li><a href="#">ROOM</a>
-          <ul class="am-sub"><li><a href="#">Room Type 01</a></li><li><a href="#">Room Type 02</a></li><li><a href="#">Room Type 03</a></li><li><a href="#">Room Type 04</a></li></ul>
-        </li>
-        <li><a href="#">SUITE</a>
-          <ul class="am-sub"><li><a href="#">Suite Type 01</a></li><li><a href="#">Suite Type 02</a></li><li><a href="#">Suite Type 03</a></li></ul>
-        </li>
-        <li><a href="#">SPECIALTY SUITE</a>
-          <ul class="am-sub"><li><a href="#">Specialty 01</a></li><li><a href="#">Specialty 02</a></li></ul>
-        </li>
-      </ul>
-    </div>
-    <div class="am-col">
-      <button type="button" class="am-tit">PARTNERS</button>
-      <ul class="am-list">
-        <li><a href="partners.html">한눈에 보기</a></li>
-        <li><a href="#">Restaurant 01</a></li>
-        <li><a href="#">Lounge &amp; Bar</a></li>
-        <li><a href="#">Restaurant 02</a></li>
-        <li><a href="#">Restaurant 03</a></li>
-        <li><a href="#">Deli</a></li>
-      </ul>
-    </div>
-    <div class="am-col">
-      <button type="button" class="am-tit">MAGAZINE</button>
-      <ul class="am-list">
-        <li><a href="magazine.html">한눈에 보기</a></li>
-        <li><a href="#">PACKAGE</a></li>
-        <li><a href="#">EVENT</a></li>
-      </ul>
-    </div>
-    <div class="am-col">
-      <button type="button" class="am-tit">COMMUNITY</button>
-      <ul class="am-list">
-        <li><a href="index.html#meeting">한눈에 보기</a></li>
-        <li><a href="#">MEETING</a>
-          <ul class="am-sub"><li><a href="#">Signature Event</a></li></ul>
-        </li>
-        <li><a href="#">WEDDING</a>
-          <ul class="am-sub"><li><a href="#">Signature Wedding</a></li></ul>
-        </li>
-      </ul>
-    </div>
-    <div class="am-col">
-      <button type="button" class="am-tit">FAQ</button>
-      <ul class="am-list">
-        <li><a href="faq.html">한눈에 보기</a></li>
-        <li><a href="#">FITNESS</a></li>
-        <li><a href="#">POOL</a></li>
-        <li><a href="#">SAUNA</a></li>
-        <li><a href="#">PILATES</a></li>
-        <li><a href="#">BUSINESS CENTER</a></li>
-      </ul>
-    </div>
-    <div class="am-col">
-      <button type="button" class="am-tit">RESERVATION</button>
-      <ul class="am-list">
-        <li><a href="#">한눈에 보기</a></li>
-        <li><a href="#">ART COLLECTION</a></li>
-        <li><a href="#">ART TOUR</a></li>
-      </ul>
-      <p class="am-tit sub">LOUNGE</p>
-      <ul class="am-thumbs">
-        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 01</em></a></li>
-        <li><a href="#"><span class="ph dark">THUMB</span><em>Story 02</em></a></li>
-      </ul>
+    <ul class="am-menu">
+      <li><a href="about.html" aria-current="page">ABOUT US</a></li>
+      <li><a href="programs.html">PROGRAMS</a></li>
+      <li><a href="partners.html">PARTNERS</a></li>
+      <li><a href="magazine.html">MAGAZINE</a></li>
+      <li><a href="community.html">COMMUNITY</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="reservation.html">RESERVATION</a></li>
+    </ul>
+    <div class="am-member">
+      <a href="#" class="am-login">로그인</a>
+      <a href="#" class="am-join">회원가입</a>
     </div>
   </nav>
 </div>

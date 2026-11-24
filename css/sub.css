@@ -19,7 +19,7 @@
 .hd-full { position: relative; }
 .gnb-bar, .sub-bar { transition: opacity .3s, visibility 0s linear .3s; }
 .sub-bar {
-  position: absolute; left: 0; right: 0; top: var(--util-h); height: var(--gnb-h);
+  position: absolute; left: 0; right: 0; top: 0; height: var(--gnb-h);
   display: flex; align-items: center; gap: 90px; padding: 0 50px;
   background: #fff; border-bottom: 1px solid #eee;
   opacity: 0; visibility: hidden;

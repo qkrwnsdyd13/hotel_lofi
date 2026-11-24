@@ -1,11 +1,10 @@
 /* ==========================================================
-   UI – 전체메뉴(슬라이드 다운/업) / 예약 드롭다운 / 영상 컨트롤 / 패밀리사이트
+   UI – 전체메뉴(슬라이드 다운/업) / 프로필 드롭다운 / 영상 컨트롤 / 패밀리사이트
 ========================================================== */
 (function () {
   'use strict';
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
-  const mqMobile = window.matchMedia('(max-width: 1024px)');
 
   /* ---------- 전체메뉴: 슬라이드 다운(열기) / 슬라이드 업(닫기) ---------- */
   const menu = $('#allMenu');
@@ -41,15 +40,16 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   document.addEventListener('fp:navigate', closeMenu); // 메뉴 안 앵커로 섹션 이동 시 닫기
 
-  // 모바일: 메뉴 단을 아코디언으로
-  $$('.am-col > .am-tit', menu).forEach((tit) => {
-    tit.addEventListener('click', () => {
-      if (!mqMobile.matches) return;
-      const col = tit.parentElement;
-      const isOpen = col.classList.toggle('open');
-      tit.setAttribute('aria-expanded', String(isOpen));
-    });
+  /* ---------- 프로필: hover/포커스는 CSS, 터치 기기용 클릭 토글은 여기서 ---------- */
+  const profile = $('.profile');
+  const profileBtn = $('.profile-btn');
+  profileBtn.addEventListener('click', () => {
+    const open = profile.classList.toggle('open');
+    profileBtn.setAttribute('aria-expanded', String(open));
   });
+  const closeProfile = () => { profile.classList.remove('open'); profileBtn.setAttribute('aria-expanded', 'false'); };
+  document.addEventListener('click', (e) => { if (!profile.contains(e.target)) closeProfile(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProfile(); });
 
   /* ---------- 메인 영상 컨트롤 (UI 상태만 – 실제 video 연결 시 주석 참고) ---------- */
   const btnPlay = $('#btnPlay');
