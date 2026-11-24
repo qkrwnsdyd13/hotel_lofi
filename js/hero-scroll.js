@@ -200,7 +200,7 @@
 
   /* ---------- 포커스: 영상 화면에서 Tab으로 가려진 요소에 닿으면 본문으로 ---------- */
   document.addEventListener('focusin', (e) => {
-    if (onHero && !ignored(e) && !e.target.closest('#hero, .hd-hero, .skip')) toContent();
+    if (onHero && !ignored(e) && !e.target.closest('#hero, .hd-hero, .skip, .kakao-fab')) toContent();
   });
 
   /* ---------- init ---------- */

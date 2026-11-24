@@ -17,7 +17,7 @@
   menu.inert = false;
   menu.setAttribute('aria-hidden', 'false');
   menu.classList.add('open');                          // 슬라이드 다운
-  document.documentElement.classList.add('menu-open'); // 미니 헤더 유지 + 햄버거 사선
+  document.documentElement.classList.add('menu-open'); // 미니 헤더(KR)를 메뉴 위에 표시
   hamBtns.forEach((b) => { b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', '전체메뉴 닫기'); });
   closeBtn.focus();
   }
@@ -40,7 +40,7 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   document.addEventListener('fp:navigate', closeMenu); // 메뉴 안 앵커로 섹션 이동 시 닫기
 
-  /* ---------- 프로필: hover/포커스는 CSS, 터치 기기용 클릭 토글은 여기서 ---------- */
+  /* ---------- 프로필: hover 는 CSS, 클릭(터치 · 키보드 Enter) 토글은 여기서 ---------- */
   const profile = $('.profile');
   const profileBtn = $('.profile-btn');
   profileBtn.addEventListener('click', () => {

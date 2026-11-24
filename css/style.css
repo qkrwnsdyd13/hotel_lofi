@@ -81,13 +81,13 @@ section[tabindex="-1"]:focus { outline: 0; } /* 앵커 이동 시 섹션 전체 
 .hd-hero {
   position: absolute; inset: 0 0 auto; height: var(--gnb-h);
   display: flex; align-items: center; gap: 36px; padding: 0 50px; color: #fff;
-  transition: opacity .4s, transform .4s;
+  transition: opacity .4s, transform .4s, visibility .4s;
 }
 .hd-logo { margin-right: 24px; }
 .hd-logo .ph-box { color: #fff; border-color: rgba(255, 255, 255, .6); }   /* 어두운 영상 위라 흰색 */
 html.menu-open .hd-logo { visibility: hidden; }   /* 전체메뉴엔 EMBLEM 이 따로 있음 */
-.btn-ham { width: 32px; height: 24px; display: none; flex-direction: column; justify-content: space-between; transition: transform .4s var(--ease); }   /* PC: 숨김, 모바일에서만 표시 */
-.btn-ham span { display: block; height: 2px; background: currentColor; transition: width .3s; }
+.btn-ham { width: 32px; height: 24px; display: none; flex-direction: column; justify-content: space-between; }   /* PC: 숨김, 모바일에서만 표시 */
+.btn-ham span { display: block; height: 2px; background: currentColor; }
 .btn-ham span:nth-child(2) { width: 80%; }
 .btn-ham span:nth-child(3) { width: 60%; }
 .hd-link { font-size: 13px; display: inline-flex; align-items: center; gap: 4px; }
@@ -110,7 +110,7 @@ html.menu-open .hd-logo { visibility: hidden; }   /* 전체메뉴엔 EMBLEM 이 
 .gnb-list a:hover::after, .gnb-list a.on::after { transform: scaleX(1); }
 .gnb-bar .btn-ham { color: #222; }
 
-/* GNB 오른쪽: KR · 프로필 (hover / 포커스 / 클릭 → 로그인 · 회원가입) */
+/* GNB 오른쪽: KR · 프로필 (hover / 클릭 · Enter → 로그인 · 회원가입) */
 .gnb-side { display: flex; align-items: center; gap: 28px; margin-left: auto; }
 .profile { position: relative; }
 .profile-btn { display: flex; align-items: center; height: var(--gnb-h); }
@@ -122,17 +122,17 @@ html.menu-open .hd-logo { visibility: hidden; }   /* 전체메뉴엔 EMBLEM 이 
   position: absolute; right: 0; top: calc(100% - 14px); min-width: 140px; background: #fff; border: 1px solid #ddd; padding: 10px 0;
   opacity: 0; visibility: hidden; transform: translateY(-6px); transition: .2s;
 }
-.profile:hover .profile-list, .profile:focus-within .profile-list, .profile.open .profile-list { opacity: 1; visibility: visible; transform: none; }
+.profile:hover .profile-list, .profile.open .profile-list { opacity: 1; visibility: visible; transform: none; }
 .profile-list a { display: block; padding: 8px 20px; font-size: 13px; font-weight: 600; white-space: nowrap; }
 .profile-list a:hover { background: #f3f3f3; }
 
 /* 모드 전환 */
 /* 전체메뉴 열림: 미니 헤더(햄버거 · 상품찾기 · KR)는 제자리에 그대로, 메뉴 위에 표시 */
 html.menu-open .header { z-index: 400; pointer-events: none; } /* 투명한 헤더 상자가 메뉴(닫기 버튼)를 덮지 않게 – 미니 헤더만 아래에서 다시 켬 */
-html.menu-open .header[data-mode] .hd-hero { opacity: 1; transform: none; color: #fff; }
+html.menu-open .header[data-mode] .hd-hero { opacity: 1; visibility: visible; transform: none; color: #fff; }
 html.menu-open .hd-hero > * { pointer-events: auto; }  /* 미니 헤더 줄 전체가 아니라 버튼·링크만 클릭 받음 (모바일 X 버튼이 이 줄 안에 있음) */
 html.menu-open .header[data-mode] .hd-full { transform: translateY(-100%); }
-.header[data-mode="default"] .hd-hero { opacity: 0; transform: translateY(-20px); pointer-events: none; }
+.header[data-mode="default"] .hd-hero { opacity: 0; visibility: hidden; transform: translateY(-20px); pointer-events: none; }   /* visibility: 숨은 링크에 Tab 이 멈추지 않게 */
 .header[data-mode="default"] .hd-full { transform: none; }
 
 /* ==========================================================
@@ -244,6 +244,19 @@ html.no-anim .s-hero, html.no-anim .hd-full, html.no-anim .hd-hero { transition:
 .sns { display: flex; gap: 22px; margin-top: 40px; justify-content: flex-end; }
 .sns-ico { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #fff; color: #000; border-radius: 8px; font-size: 13px; font-weight: 700; }
 
+/* 카카오톡 채널 바로가기 – 영상 레이어(50) · 헤더(100) 사이, 전체메뉴(300)에는 가려짐 */
+.kakao-fab {
+  position: fixed; right: 40px; bottom: 40px; z-index: 90; width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: #fee500; box-shadow: 0 4px 14px rgba(0, 0, 0, .25); transition: transform .2s;
+}
+.kakao-fab:hover { transform: translateY(-3px); }
+.kakao-fab i { position: relative; width: 28px; height: 22px; border-radius: 50%; background: #3c1e1e; }   /* 말풍선 */
+.kakao-fab i::after {
+  content: ""; position: absolute; left: 6px; bottom: -6px; transform: rotate(25deg);
+  border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 8px solid #3c1e1e;
+}
+
 /* ==========================================================
    RESPONSIVE
 ========================================================== */
@@ -274,6 +287,7 @@ html.no-anim .s-hero, html.no-anim .hd-full, html.no-anim .hd-hero { transition:
   html.menu-open .hd-hero .btn-ham { visibility: hidden; }   /* 메뉴 열림: 같은 자리의 X(.am-close)만 보이게 */
 
   .hero-ctrl { right: 16px; }
+  .kakao-fab { right: 16px; bottom: 16px; width: 52px; height: 52px; }
   .h-serif { font-size: 32px; }
   .h-serif.xl { font-size: 32px; }
   .intro-inner { gap: 28px; }
